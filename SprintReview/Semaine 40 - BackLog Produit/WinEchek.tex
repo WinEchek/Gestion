@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[top=1cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+\title{%
+    \begin{minipage}\linewidth
+        \centering \bfseries
+        WinEchek
+        \vskip3pt
+        \large Un jeu qu'il est bien pour jouer aux echek
+    \end{minipage}
+}
+
+%\title{}
+\date{}
+
+\begin{document}
+
+% définition des style de puces
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$-$}
+\renewcommand{\labelitemiv}{$\triangleright$}
+
+\maketitle
+
+\section{Contexte}
+
+
+\section{Le BackLog produit}
+\begin{enumerate}
+ \item IHM
+ \begin{enumerate}
+  \item Afficher une partie
+  \begin{enumerate}
+   \item Afficher le plateau
+   \item Afficher les pièces
+   \item Afficher les timers
+   \item Afficher les scores
+   \item Afficher l'historique des coups
+   \item Afficher avec les données du serveur
+  \end{enumerate}
+  \item Contrôler une partie
+  \begin{enumerate}
+   \item Effectuer un déplacement
+   \begin{enumerate}
+    \item Afficher les déplacements possibles
+    \item Afficher si le déplacement est valide ou non
+   \end{enumerate}
+    \item Envoyer les actions vers le serveur
+  \end{enumerate}
+
+  \item Contrôler le comportement du logiciel
+ \end{enumerate}
+  \item Moteur
+  \begin{enumerate}
+   \item Gérer une partie
+   \begin{enumerate}
+    \item Gérer les déplacements
+    \item Gérer la structure de données
+    \begin{enumerate}
+     \item Partager les données
+     \item Mapper, démapper vers une structure différente
+    \end{enumerate}
+
+   \end{enumerate}
+  \end{enumerate}
+  \item Réseau
+  \begin{enumerate}
+   \item Gérer la communication entre deux application (un client/un serveur)
+  \end{enumerate}
+  \item IA
+  \begin{enumerate}
+    \item Simuler un joueur (mode solo)
+    \begin{enumerate}
+     \item Connaître les données de la partie 
+    \end{enumerate}
+    \item Générer des IA
+    \begin{enumerate}
+      \item simuler des parties
+    \end{enumerate}
+   \end{enumerate}
+\end{enumerate}
+
+
+\subsection{}
+
+
+
+\end{document}
