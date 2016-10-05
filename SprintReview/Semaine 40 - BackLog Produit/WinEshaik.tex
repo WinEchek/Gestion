@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[top=1cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+\title{%
+    \begin{minipage}\linewidth
+        \centering \bfseries
+        WinEchek
+        \vskip3pt
+        \large Un jeu qu'il est bien pour jouer aux echek
+    \end{minipage}
+}
+
+%\title{}
+\date{}
+
+\begin{document}
+
+% définition des style de puces
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$-$}
+\renewcommand{\labelitemiv}{$\triangleright$}
+
+\maketitle
+
+\section{Contexte}
+
+
+\subsection{Le Back log produit}
+\begin{itemize}
+ \item IHM
+ \begin{itemize}
+  \item Afficher une partie
+  \begin{itemize}
+   \item Afficher le plateau
+   \item Afficher les pièces
+   \item Afficher les timers
+   \item Afficher les scores
+   \item Afficher l'historique des coups
+   \item Afficher avec les données du serveur
+  \end{itemize}
+  \item Contrôler une partie
+  \begin{itemize}
+   \item Effectuer un déplacement
+   \begin{itemize}
+    \item Afficher les déplacements possibles
+    \item Afficher si le déplacement est valide ou non
+   \end{itemize}
+    \item Envoyer les actions vers le serveur
+  \end{itemize}
+
+  \item Contrôler le comportement du logiciel
+ \end{itemize}
+  \item Moteur
+  \begin{itemize}
+   \item Gérer une partie
+   \begin{itemize}
+    \item Gérer les déplacements
+    \item Gérer la structure de données
+    \begin{itemize}
+     \item Partager les données
+     \item Mapper, démapper vers une structure différente
+    \end{itemize}
+
+   \end{itemize}
+  \end{itemize}
+  \item Réseau
+  \begin{itemize}
+   \item Gérer la communication entre deux application (un client/un serveur)
+  \end{itemize}
+  \item IA
+  \begin{itemize}
+    \item Simuler un joueur (mode solo)
+    \begin{itemize}
+     \item Connaître les données de la partie 
+    \end{itemize}
+    \item Générer des IA
+    \begin{itemize}
+      \item simuler des parties
+    \end{itemize}
+   \end{itemize}
+\end{itemize}
+
+
+\subsection{}
+
+
+
+\end{document}
