@@ -1,10 +1,11 @@
 \documentclass{article}
 \usepackage[top=1cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
-\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage{xcolor}
 
 \title{%
     \begin{minipage}\linewidth
@@ -15,12 +16,13 @@
     \end{minipage}
 }
 
-%\title{}
 \date{}
+
+\definecolor{green}{rgb}{0,0.6,0}
 
 \begin{document}
 
-% dÃ©finition des style de puces
+% définition des style de puces
 \renewcommand{\labelitemi}{$\bullet$}
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemiii}{$-$}
@@ -29,62 +31,50 @@
 \maketitle
 
 \section{Contexte}
+J'suis dans mon paquebot, t'es dans ton radeau
+
+\section{Backlog produit}
+\begin{itemize}
+ \item Gestion de l'affichage et des contrôlse de l'utilisateur (IHM)
+ \begin{itemize}
+  \item{\textcolor{red}{Haute}} L'utilisateur pourra lancer une partie contre un adversaire de type humains sur la même machine
+  \item{\textcolor{red}{Haute}} L'utilisateur pourra lancer une partie contre un adversaire en local
+  \item{\textcolor{orange}{Moyenne}} L'utilisateur pourra lancer une partie contre un adversaire en réseau
+  \item{\textcolor{green}{Basse}} L'utilisateur pourra lancer une partie contre une intelligence artificielle
+  \item{\textcolor{red}{Haute}} Présence du plateau et des pièces lors de l'affichage d'une partie
+  \item{\textcolor{orange}{Moyenne}} Présence d'un timer dans l'affichage d'une partie
+  \item{\textcolor{orange}{Moyenne}} Présence d'un historique des coups dans l'affichage d'une partie
+  \item{\textcolor{red}{Haute}} Présence d'un affichage des pièces prises lors d'une partie
+  \item{\textcolor{red}{Haute}} L'utilisateur pourra contrôler le déplacement de ses pièces grâce à la souris
+  \item{\textcolor{orange}{Moyenne}} Afficher les coups possibles lorsque le joueur sélectionne une pièce
+  \item{\textcolor{green}{Basse}} Afficher un menu pour modifier des options d'affichage ou sauvegarder un historique de partie
+ \end{itemize}
+ \item Moteur de jeu et contrôle des parties
+ \begin{itemize}
+  \item{\textcolor{red}{Haute}} Déroulement en tour par tout
+  \item{\textcolor{red}{Haute}} Contrôle des déplacements possibles
+  \item{\textcolor{red}{Haute}} Contrôle des positions d'échec
+  \item{\textcolor{red}{Haute}} Contrôle de prise des pièces
+  \item{\textcolor{red}{Haute}} Contrôle de la promotion d'un pion en une autre pièce prise par l'adversaire
+  \item{\textcolor{red}{Haute}} Contrôle de fin de partie (échec et mat)
+ \end{itemize}
+ \item Gestion des parties en réseau
+ \begin{itemize}
+  \item{\textcolor{red}{Haute}} Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre soit en local (sur un autre ordinateur)
+  \item{\textcolor{orange}{Moyenne}} Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre à travers internet
+ \end{itemize}
+ \item Mise en place d'un joueur virtuel
+ \begin{itemize}
+  \item{\textcolor{green}{Basse}} L'utilisateur jouera contre un joueur virtuel (intelligence artificielle) qui proposera plusieurs niveaux de difficulté
+ \end{itemize}
 
 
-\section{Le BackLog produit}
-\begin{enumerate}
- \item IHM
- \begin{enumerate}
-  \item Afficher une partie
-  \begin{enumerate}
-   \item Afficher le plateau
-   \item Afficher les piÃ¨ces
-   \item Afficher les timers
-   \item Afficher les scores
-   \item Afficher l'historique des coups
-   \item Afficher avec les donnÃ©es du serveur
-  \end{enumerate}
-  \item ContrÃ´ler une partie
-  \begin{enumerate}
-   \item Effectuer un dÃ©placement
-   \begin{enumerate}
-    \item Afficher les dÃ©placements possibles
-    \item Afficher si le dÃ©placement est valide ou non
-   \end{enumerate}
-    \item Envoyer les actions vers le serveur
-  \end{enumerate}
 
-  \item ContrÃ´ler le comportement du logiciel
- \end{enumerate}
-  \item Moteur
-  \begin{enumerate}
-   \item GÃ©rer une partie
-   \begin{enumerate}
-    \item GÃ©rer les dÃ©placements
-    \item GÃ©rer la structure de donnÃ©es
-    \begin{enumerate}
-     \item Partager les donnÃ©es
-     \item Mapper, dÃ©mapper vers une structure diffÃ©rente
-    \end{enumerate}
 
-   \end{enumerate}
-  \end{enumerate}
-  \item RÃ©seau
-  \begin{enumerate}
-   \item GÃ©rer la communication entre deux application (un client/un serveur)
-  \end{enumerate}
-  \item IA
-  \begin{enumerate}
-    \item Simuler un joueur (mode solo)
-    \begin{enumerate}
-     \item ConnaÃ®tre les donnÃ©es de la partie 
-    \end{enumerate}
-    \item GÃ©nÃ©rer des IA
-    \begin{enumerate}
-      \item simuler des parties
-    \end{enumerate}
-   \end{enumerate}
-\end{enumerate}
+ 
+
+\end{itemize}
+
 
 
 \subsection{}
