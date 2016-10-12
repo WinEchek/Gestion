@@ -1,3 +1,14 @@
+Sources 
+- http://www.tckerrigan.com/Chess/TSCP/
+- https://chessprogramming.wikispaces.com/
+- https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
+- https://github.com/Tazeg/JePyChess
+- http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c
+- http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf
+- http://khayyam.developpez.com/articles/algo/genetic/
+
+
+
 Moteurs de jeux existante :
 
 https://fr.wikipedia.org/wiki/Deep_Blue
@@ -17,14 +28,7 @@ Solution téléchargeable :
 - WJChess 3D (http://www.01net.com/telecharger/windows/Jeux/cartes_dames_echec/fiches/28571.html)
 (https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html)
 
-Sources 
-- http://www.tckerrigan.com/Chess/TSCP/
-- https://chessprogramming.wikispaces.com/
-- https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
-- https://github.com/Tazeg/JePyChess
-- http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c
-- http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf
-- http://khayyam.developpez.com/articles/algo/genetic/
+
 
 IA :
 - Élagage alpha-bêta
@@ -51,6 +55,8 @@ IA :
 	- Cavalier : 3
 	- Fou : 3
 	- Pion : 1
+
+
 
 
 Partie nulle :
