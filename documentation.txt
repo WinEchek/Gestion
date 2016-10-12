@@ -1,0 +1,66 @@
+Moteurs de jeux existante :
+
+https://fr.wikipedia.org/wiki/Deep_Blue
+
+Open source :
+- StockFish (https://stockfishchess.org/)
+
+Autre :
+- Komodo (https://komodochess.com/)
+- Houdini (http://www.cruxis.com/chess/houdini.htm)
+- Rybka (http://www.rybkachess.com/)
+
+Solution en ligne :
+- Lichess (https://fr.lichess.org/)
+
+Solution téléchargeable :
+- WJChess 3D (http://www.01net.com/telecharger/windows/Jeux/cartes_dames_echec/fiches/28571.html)
+(https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html)
+
+Sources 
+- http://www.tckerrigan.com/Chess/TSCP/
+- https://chessprogramming.wikispaces.com/
+- https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
+- https://github.com/Tazeg/JePyChess
+- http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c
+- http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf
+- http://khayyam.developpez.com/articles/algo/genetic/
+
+IA :
+- Élagage alpha-bêta
+
+	Bonus-malus :
+	- pion passé : pion qui ne rencontrera plus de pion adverse et qui peut donc aller en promotion;
+	- tour en 7ème rangée;
+	- roi dans une colonne ouverte;
+	- pions du roque avancés;
+	- le roi a été déplacé et ne peut plus roquer;
+	- pions doublés (2 pions dans la même colonne);
+	- pion isolé : pion qui ne peut plus être protégé par un autre pion.
+
+	En cours de jeu :
+	- en début de partie, il est préférable de roquer pour protéger le roi. Au contraire, en fin de partie, il faut placer le roi au centre pour éviter un mat sur une arrête ou dans un coin de l’échiquier;
+	- un cavalier peut atteindre un plus grand nombre de cases s’il est au centre;
+	- les pions prennent de la valeur s’ils approchent la 8ème rangée.
+
+	Points pièces :
+	- Vide : 0
+	- Roi : 0
+	- Reine : 9
+	- Tour : 5
+	- Cavalier : 3
+	- Fou : 3
+	- Pion : 1
+
+
+Partie nulle :
+- Nulle par matériel insuffisant :
+	- roi contre roi,
+	- roi et fou contre roi,
+	- roi et cavalier contre roi,
+	- roi et fou contre roi et fou de même couleur,
+
+- Règles des 50 coups sans prise de pièces
+- Pat
+- Consentement mutuel
+- Triple répétition
