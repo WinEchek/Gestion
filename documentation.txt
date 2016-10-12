@@ -47,7 +47,7 @@ IA :
 	- un cavalier peut atteindre un plus grand nombre de cases s’il est au centre;
 	- les pions prennent de la valeur s’ils approchent la 8ème rangée.
 
-	Points pièces :
+	Points cases :
 	- Vide : 0
 	- Roi : 0
 	- Reine : 9
