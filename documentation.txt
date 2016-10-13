@@ -45,7 +45,14 @@ IA :
 	En cours de jeu :
 	- en début de partie, il est préférable de roquer pour protéger le roi. Au contraire, en fin de partie, il faut placer le roi au centre pour éviter un mat sur une arrête ou dans un coin de l’échiquier;
 	- un cavalier peut atteindre un plus grand nombre de cases s’il est au centre;
-	- les pions prennent de la valeur s’ils approchent la 8ème rangée.
+	- les pions prennent de la valeur s’ils approchent la 8ème rangée (récupérer une dame).
+
+	Pénalités :
+	- Pions doublés ou triplés : plusieurs pions sur une même colonnes se gênent dans leurs mouvements
+	- Pions bloqués : deux pions se bloqués face à face
+	- Pions passés : un pion qui ne peut être que bloqué ou pris par l'adversaire constitue un grand danger car il menace la ligne arrière
+	- Pion isolé : un pion qui n'a aucun pion allié sur ses côtés
+	- Avoir les 8 pions sur une même ligne
 
 	Points cases :
 	- Vide : 0
@@ -55,7 +62,6 @@ IA :
 	- Cavalier : 3
 	- Fou : 3
 	- Pion : 1
-
 
 
 
@@ -70,3 +76,29 @@ Partie nulle :
 - Pat
 - Consentement mutuel
 - Triple répétition
+
+
+Citation sujet efrei:
+
+Modéliser l’IA d’un jeu avec des algorithmes génétiques paraît très attractif. En effet, à
+partir des contraintes à définir qui ne sont en fait que les règles du jeu d’échec, l’IA serait en
+mesure d’apprendre de ses défaites et de se s’améliorer au fur et à mesure des parties.
+Cependant, le choix d’une telle méthode se révélerait inadaptée à notre problème. S’il ne fait
+aucun doute que l’IA saura rapidement déplacer toutes ses pièces sur l’échiquier, il est moins
+évident de penser qu’elle saura devenir un adversaire redoutable. Par son approche empirique
+du jeu, l’IA ne procédera que par identification et répétition de séquences apprises au cours de
+ses parties précédentes. On peut ainsi dire que paradoxalement, une IA génétique montrerait
+moins de faculté d’adaptation face à son adversaire qu’une IA composé d’un algorithme
+linéaire de parcours d’arbre et d’une fonction d’évaluation.
+
++ webographie :
+
+http://www.ffothello.org/info/algos.htm
+http://www.ifrance.com/jeudechecs/pageechecs.htm
+http://chess.verhelst.org/search.html
+http://www.paginus.com/lesechecs/a.html
+http://wannabe.guru.org/scott/hobbies/chess/
+http://www.gamedev.net/reference/list.asp?categoryid=18
+http://www.chessopolis.com/cchess.htm#info
+http://www.aarontay.per.sg/winboard/egtb.html (Endgame Table Guide)
+http://www.wired.com/wired/archive/12.01/stuntbots.html?pg=1&topic=&topic_set=
