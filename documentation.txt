@@ -1,14 +1,3 @@
-Sources 
-- http://www.tckerrigan.com/Chess/TSCP/
-- https://chessprogramming.wikispaces.com/
-- https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
-- https://github.com/Tazeg/JePyChess
-- http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c
-- http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf
-- http://khayyam.developpez.com/articles/algo/genetic/
-
-
-
 Moteurs de jeux existants :
 
 https://fr.wikipedia.org/wiki/Deep_Blue
@@ -94,11 +83,13 @@ linéaire de parcours d’arbre et d’une fonction d’évaluation.
 + webographie :
 
 http://www.ffothello.org/info/algos.htm
-http://www.ifrance.com/jeudechecs/pageechecs.htm
 http://chess.verhelst.org/search.html
-http://www.paginus.com/lesechecs/a.html
 http://wannabe.guru.org/scott/hobbies/chess/
-http://www.gamedev.net/reference/list.asp?categoryid=18
 http://www.chessopolis.com/cchess.htm#info
-http://www.aarontay.per.sg/winboard/egtb.html (Endgame Table Guide)
-http://www.wired.com/wired/archive/12.01/stuntbots.html?pg=1&topic=&topic_set=
+http://www.tckerrigan.com/Chess/TSCP/
+https://chessprogramming.wikispaces.com/
+https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
+https://github.com/Tazeg/JePyChess
+http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c
+http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf
+http://khayyam.developpez.com/articles/algo/genetic/

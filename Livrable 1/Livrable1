@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage[top=1cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{url}
+%\usepackage{hyperref}
+\usetikzlibrary{arrows,automata}
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{1,0,0}
+
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+	numbers=left,
+	frame=leftline,
+	xleftmargin=42pt
+}
+
+\title{%
+    \begin{minipage}\linewidth
+        \centering \bfseries
+	  Livrable 1
+        \vskip3pt
+        \large Projet tuteuré
+    \end{minipage}
+}
+
+\author{Mathis Deloge, Antoine Petot, Ange Picard, Arthur Carchi, Lucas Fougerouse, Vincent Dereclenne}
+\date{}
+
+
+\begin{document}
+
+% définition des style de puces
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$-$}
+\renewcommand{\labelitemiv}{$\triangleright$}
+
+
+\maketitle
+
+\section{Introduction}
+
+
+\section{Existant}
+\subsection{Deep Blue}
+\url{https://fr.wikipedia.org/wiki/Deep_Blue}
+
+
+\subsection{StockFish}
+\url{https://stockfishchess.org/}
+
+\subsection{Komodo}
+\url{https://komodochess.com/}
+
+\subsection{Houdini}
+\url{http://www.cruxis.com/chess/houdini.htm}
+
+\subsection{Rybka}
+\url{http://www.rybkachess.com/}
+
+
+\section{Solutions similaires}
+\subsection{WJChess 3d}
+\url{https://fr.jeffprod.com/wjchess/}
+
+\subsection{Lichess}
+\url{https://fr.lichess.org/}
+Basé sur StockFish
+
+\section{Fonctionnalités principales}
+\begin{itemize}
+ \item Jouer une partie
+ \begin{itemize}
+  \item Contre un adversaire
+  \item Seul
+  \item Via le réseau
+  \item Bouger une pièce
+  \item Voir l'historique des coups
+  \item Voir les coups possibles
+ \end{itemize}
+ \item Sélectionner niveau IA
+ \item Enregistrer une partie
+ \item Reprendre une partie enregistrée
+\end{itemize}
+
+\section{Technologies}
+\subsection{Intelligence Artificielle}
+\begin{itemize}
+ \item Algorithme MiniMax
+ \item Elagage Alpha-Beta
+ \item Algorithme Nega-Alpha
+ \item Algorithme Alpha-Beta avec mémoire
+\end{itemize}
+
+\subsubsection{Evaluation pions}
+\begin{itemize}
+ \item Vide : 0
+ \item Roi : 0
+ \item Reine : 9
+ \item Tour : 5
+ \item Cavalier : 3
+ \item Fou : 3
+ \item Pion : 1
+\end{itemize}
+
+\subsection{Moteur}
+
+\subsubsection{Bonus-Malus}
+\begin{itemize}
+ \item Pion passé : pion qui ne rencontrera plus de pion adverse et qui peut donc aller en promotion
+ \item Tour en 7ème rangée
+ \item Roi dans une colonne ouverte
+ \item Pions du roque avancés
+ \item Le roi a été déplacé et ne peut plus roquer
+ \item Pions doublés (2 pions dans la même colonne)
+ \item Pion isolé : pion qui ne peut plus être protégé par un autre pion
+\end{itemize}
+
+\subsubsection{En jeu}
+\begin{itemize}
+ \item En début de partie, il est préférable de roquer pour protéger le roi. Au contraire, en fin de partie, il faut placer le roi au centre pour éviter un mat sur une arrête ou dans un coin de l’échiquier
+ \item Un cavalier peut atteindre un plus grand nombre de cases s’il est au centre
+ \item Les pions prennent de la valeur s’ils approchent la 8ème rangée (récupérer une dame)
+ \end{itemize}
+
+ \subsubsection{Pénalités}
+ \begin{itemize}
+  \item Pions doublés ou triplés : plusieurs pions sur une même colonnes se gênent dans leurs mouvements
+  \item Pions bloqués : deux pions se bloqués face à face
+  \item Pions passés : un pion qui ne peut être que bloqué ou pris par l'adversaire constitue un grand danger car il menace la ligne arrière
+  \item Pion isolé : un pion qui n'a aucun pion allié sur ses côtés
+  \item Avoir les 8 pions sur une même ligne
+ \end{itemize}
+ 
+\subsubsection{Partie nulle}
+\begin{itemize}
+ \item Nulle par matériel insuffisant :
+ \begin{itemize}
+  \item Roi contre Roi
+  \item Roi et Fou contre Roi
+  \item Roi et Cavalier contre Roi
+  \item Roi et Fou contre Roi et Fou
+ \end{itemize}
+ \item Règle des 50 coups sans prise de pièces
+ \item Pat
+ \item Consentement mutuel
+ \item Triple répétition
+\end{itemize}
+
+\newpage
+\section{Annexe}
+\subsection{Webographie}
+\begin{itemize}
+ \item \url{http://www.ffothello.org/informatique/algorithmes/}
+ \item \url{http://wannabe.guru.org/scott/hobbies/chess/}
+ \item \url{http://www.chessopolis.com/computer-chess/#info}
+ \item \url{http://www.tckerrigan.com/Chess/TSCP/}
+ \item \url{https://chessprogramming.wikispaces.com/}
+ \item \url{https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html}
+ \item \url{https://github.com/Tazeg/JePyChess}
+ \item \url{http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c}
+ \item \url{http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf}
+ \item \url{http://khayyam.developpez.com/articles/algo/genetic/}
+\end{itemize}
+
+\end{document}
