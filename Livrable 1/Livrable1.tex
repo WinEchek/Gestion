@@ -84,15 +84,13 @@ Ce moteur est conçu pour la performance (il a gagné plusieurs d'IA d'échecs). C'
 
 Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
-\subsubsection{Houdini}
-\url{http://www.cruxis.com/chess/houdini.htm}
+\subsubsection{GNU Chess}
+\url{https://www.gnu.org/software/chess/}
 \newline
 
+GNU Chess est un logiciel libre de jeu d'échecs, sous les termes de la licence publique générale GNU, maintenu par la collaboration de développeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut être considéré comme un moteur d'échecs. Il est souvent utilisé avec un environnement graphique comme XBoard ou GlChess pour la 3D. 
 
-
-\subsubsection{Rybka}
-\url{http://www.rybkachess.com/}
-\newline
+Tout comme StockFish, GNU Chess utilise des bitboards et son intelligence artificielle est basée sur un algorithme de recherche\footnote{un algorithme de recherche est un type d'algorithme qui, pour un domaine, un problème de ce domaine et des critères donnés, retourne en résultat un ensemble de solutions répondant au problème.} appelé élagage Alpha-Bêta (cf. partie 5.1) et a subi une refonte total pour sa version 5 en 1999, car son code était mal écrit.
 
 \subsection{Deep Blue}
 \url{https://fr.wikipedia.org/wiki/Deep_Blue}
@@ -106,14 +104,16 @@ Deep Blue est un superordinateur conçu par IBM destiné à jouer aux échecs. Il a 
 
 \subsection{Lichess}
 \url{https://fr.lichess.org/}
-Basé sur StockFish
+\newline
+
+Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contre d'autres joueurs réels, une fois connecté sur le site, ou bien contre une IA avec différents niveaux de difficulté allant de 1 à 10. Le site propose aussi des tutoriels proposant une initiation aux échecs et différents entraînements en fonction de son niveau de maîtrise.
 
 \section{Fonctionnalités principales}
 \begin{itemize}
  \item Jouer une partie
  \begin{itemize}
   \item Contre un adversaire
-  \item Seul
+  \item Contre une IA
   \item Via le réseau
   \item Bouger une pièce
   \item Voir l'historique des coups
