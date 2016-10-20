@@ -2,7 +2,7 @@
 \usepackage[top=1cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -10,7 +10,7 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{url}
-%\usepackage{hyperref}
+\usepackage{hyperref}
 \usetikzlibrary{arrows,automata}
 
 
@@ -42,7 +42,7 @@
     \end{minipage}
 }
 
-\author{Mathis Deloge, Antoine Petot, Ange Picard, Arthur Carchi, Lucas Fougerouse, Vincent Dereclenne}
+\author{Mathis DELOGE, Antoine PETOT, Ange PICARD\\Arthur CARCHI, Lucas FOUGEROUSE, Vincent DERECLENNE}
 \date{}
 
 
@@ -59,27 +59,46 @@
 
 \section{Introduction}
 
+Notre projet consiste en la réalisation d'un jeu d'échec doté d'une prise en charge réseau, afin de jouer en ligne, ainsi qu'une intelligence artificielle pour pouvoir jouer seul.
+
+Ce projet n'a pas pour but d'innover ou de proposer quelque chose de fondamentalement nouveau dans la conception et la réalisation d'un jeu d'échec. Nous voulons réunir les matières des modules techniques vues aux S2 et au S3. Ceci nous permettra de programmer un logiciel complet (qui comporte une IHM, une base de données et le tout conçu avec une approche objet) et découvrir le monde de l'intelligence artificielle et la gestion réseau.
 
 \section{Existant}
-\subsection{Moteur}
-\subsubsection{Deep Blue}
-\url{https://fr.wikipedia.org/wiki/Deep_Blue}
+\subsection{Moteurs}
+
+Les moteurs d'échecs sont le cœur des jeux d'échecs. Ce sont eux qui gèrent toutes les contraintes des parties d'échecs et ont un module d'intelligence artificielle intégré.
+
 
 
 \subsubsection{StockFish}
 \url{https://stockfishchess.org/}
+\newline
+
+Stockfish est un programme d'échecs open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4.
+
+Ce moteur est conçu pour la performance (il a gagné plusieurs d'IA d'échecs). C'est pourquoi il a été codé en C++, un langage orienté objet basé sur le langage C très apprécié pour sa vitesse d'exécution. Pour modélisé le plateau de jeu, StockFish utilise des bitboards. Ceux-ci permettent de représenter un plateau sous la forme d'une matrice de bits (1 si la case possède une pièce, 0 sinon). Cependant, lors de leur création dans le moteur, on va préférer stocker ces matrices sous la forme d'un entier non signé de 64 bits (puisque le plateau possède 64 cases). Ainsi, le moteur est très rapide et très peu gourmand en mémoire, mais leur implémentation est loin d'être aisée.
 
 \subsubsection{Komodo}
 \url{https://komodochess.com/}
+\newline
+
+Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
 \subsubsection{Houdini}
 \url{http://www.cruxis.com/chess/houdini.htm}
+\newline
+
+
 
 \subsubsection{Rybka}
 \url{http://www.rybkachess.com/}
+\newline
 
-\subsection{GUI}
+\subsection{Deep Blue}
+\url{https://fr.wikipedia.org/wiki/Deep_Blue}
+\newline
 
+Deep Blue est un superordinateur conçu par IBM destiné à jouer aux échecs. Il a battu Garry Kasparov, un des meilleurs joueurs d'échecs au monde, en 1997. Ce fut un événement remarquable dans le monde de l'intelligence artificielle, car dès lors, aucun ordinateur n'avait réussi à battre un joueur humain aux échecs, et on pensait que ce ne serait pas possible avant un long moment.
 
 \section{Solutions similaires}
 \subsection{WJChess 3d}
@@ -114,7 +133,7 @@ Basé sur StockFish
  \item Algorithme Alpha-Beta avec mémoire
 \end{itemize}
 
-\subsubsection{Evaluation pions}
+\subsubsection{Evaluation des pièces}
 \begin{itemize}
  \item Vide : 0
  \item Roi : 0
