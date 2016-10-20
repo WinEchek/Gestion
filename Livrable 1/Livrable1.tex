@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{graphicx}
 \usetikzlibrary{arrows,automata}
 
 
@@ -61,7 +62,7 @@
 
 Notre projet consiste en la réalisation d'un jeu d'échec doté d'une prise en charge réseau, afin de jouer en ligne, ainsi qu'une intelligence artificielle pour pouvoir jouer seul.
 
-Ce projet n'a pas pour but d'innover ou de proposer quelque chose de fondamentalement nouveau dans la conception et la réalisation d'un jeu d'échec. Nous voulons réunir les matières des modules techniques vues aux S2 et au S3. Ceci nous permettra de programmer un logiciel complet (qui comporte une IHM, une base de données et le tout conçu avec une approche objet) et découvrir le monde de l'intelligence artificielle et la gestion réseau.
+Ce projet n'a pas pour but d'innover ou de proposer quelque chose de fondamentalement nouveau dans la conception et la réalisation d'un jeu d'échec. Nous voulons réunir les matières des modules techniques vues aux S2 et au S3. Ceci nous permettra de programmer un jeu d'échec complet (qui comporte une IHM, une base de données et le tout conçu avec une approche objet) et découvrir le monde de l'intelligence artificielle et la gestion réseau.
 
 \section{Existant}
 \subsection{Moteurs}
@@ -130,51 +131,25 @@ Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contr
 \end{itemize}
 
 \section{Technologies}
+\subsection{Préambule}
+
+Etant donné que nous ne cherchons pas à créer le moteur d'échecs le plus puissant, ni commercialisé notre application, nous n’inclurons pas d'éléments de programmation avancé (tel que les bitboards) car elles demandent une connaissance approfondi dans ce domaine. Nous souhaitons donc réussir à faire un jeu d'échecs sans avoir de connaissances particulières, excepté pour l'intelligence artificielle car cette partie ne s'improvise pas.
+
+\iffalse
 \subsection{Intelligence Artificielle}
-\begin{itemize}
- \item Algorithme MiniMax
- \item Elagage Alpha-Beta
- \item Algorithme Nega-Alpha
- \item Algorithme Alpha-Beta avec mémoire
-\end{itemize}
+ \subsubsection{Algorithme MiniMax}
 
-\subsubsection{Evaluation des pièces}
-\begin{itemize}
- \item Vide : 0
- \item Roi : 0
- \item Reine : 9
- \item Tour : 5
- \item Cavalier : 3
- \item Fou : 3
- \item Pion : 1
-\end{itemize}
+L'algorithme minimax est un algorithme souvent utilisé pour les jeux fonctionnant sur le principe du tour par tour. Le but est de trouver le meilleur coups possible à partir d'un état donné du jeu. Pour ce faire, on construit un arbre de jeu, qui est une représentation des coups possibles à partir de la configuration actuelle du jeu. Les feuilles de cet arbre représentent la ou les prochaines fois que l'adversaire de l'IA va jouer (ainsi on peut prévoir les coups sur un à plusieurs tours en fonction d'un niveau de profondeur choisis), et on calcule pour chaque feuille un "poids" pour tout les coups possibles.
 
-\subsubsection{Bonus-Malus}
-\begin{itemize}
- \item Pion passé : pion qui ne rencontrera plus de pion adverse et qui peut donc aller en promotion
- \item Tour en 7ème rangée
- \item Roi dans une colonne ouverte
- \item Pions du roque avancés
- \item Le roi a été déplacé et ne peut plus roquer
- \item Pions doublés (2 pions dans la même colonne)
- \item Pion isolé : pion qui ne peut plus être protégé par un autre pion
-\end{itemize}
+Ce poids se détermine à l'aide d'une fonction d'évaluation. Celle-ci permet en fonction de paramètres choisis tel que la position d'une pièce ou son degré de liberté (possibilité de se déplacer de une ou plusieurs cases, en diagonal, horizontalement, verticalement, etc.) calculer un poids pour un certain coups.
+L'IA n'a plus qu'à choisir le meilleur coups, c'est-à-dire, le coups associé au poids le plus élevé.
+\fi
 
-\subsubsection{En jeu}
-\begin{itemize}
- \item En début de partie, il est préférable de roquer pour protéger le roi. Au contraire, en fin de partie, il faut placer le roi au centre pour éviter un mat sur une arrête ou dans un coin de l’échiquier
- \item Un cavalier peut atteindre un plus grand nombre de cases s’il est au centre
- \item Les pions prennent de la valeur s’ils approchent la 8ème rangée (récupérer une dame)
- \end{itemize}
-
- \subsubsection{Pénalités}
- \begin{itemize}
-  \item Pions doublés ou triplés : plusieurs pions sur une même colonnes se gênent dans leurs mouvements
-  \item Pions bloqués : deux pions se bloqués face à face
-  \item Pions passés : un pion qui ne peut être que bloqué ou pris par l'adversaire constitue un grand danger car il menace la ligne arrière
-  \item Pion isolé : un pion qui n'a aucun pion allié sur ses côtés
-  \item Avoir les 8 pions sur une même ligne
- \end{itemize}
+\subsection{Langage}
+Nous avons choisi de développer WinEchek en C\#, avec le framework .NET. Ces solutions de développement nous permettent une grande flexibilité grâce à l'abstraction qu'elles fournissent. En effet, cette abstraction nous permettra d'aller droit au but et de ne pas s'arrêter sur des détails d'implémentation notamment pour le réseau ou l'IHM.
+Le C++ aurait permis une recherche de la performance bien plus poussée, mais peu pertinente dans le cadre de ce projet. 
+Aussi, le Java propose également une panoplie d'outils pour développer rapidement, mais la bibliothèque graphique nous parait moins flexible que celle fournie par le framework .NET (WPF)
+Ce projet sera l'occasion de nous familiariser avec le C\#, très utilisé dans le monde professionnel. Par ailleurs, ce choix nous fera gagner du temps lors de l'implémentation, ce qui nous permettra d'arriver plus vite à la réalisation de l'IA qui est intéressante pour nous.
 
 \subsection{Moteur}
  
