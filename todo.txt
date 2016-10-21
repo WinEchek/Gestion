@@ -1,0 +1,25 @@
+CO
+
+utiliser des concepts et pas des noms de méthodes ( click() -> click sur une case )
+Engine doit demander au modèle sur tous les diagrammes de séquences
+
+
+créer une nouvelle partie :
+- à détailler
+
+Jouer un tour : 
+- GUI doit parler au joueur (displayPlayMode())
+- Update model avant true engine
+
+Roquer :
+- factorisation possible avec déplacer une pièce (Engine qui détecte un mvt spécial)
+
+sauvegarder :
+- Message au player pour dire si la sauvegarde est effective
+
+
+
+
+Livrable 1
+détailler fonctionnalités principales
+rester sur des fonctionnalité et non des technologies

@@ -61,15 +61,35 @@
 \subsection{Besoins}
 WinEchek est une application Windows qui permettra de jouer aux échecs sur un ordinateur. Les parties pourront être dispensées de différentes manières. La première sera de jouer à deux joueurs humains sur le même ordinateur. La seconde permettra à deux joueurs humains de jouer en réseau (local) sur la même partie. Enfin, la dernière proposera à un joueur seul de dispenser une partie contre l'ordinateur qui sera doté d'une intelligence artificielle.
 
+\subsection{Fonctionnalités principales}
+\begin{itemize}
+ \item Jouer une partie
+ \begin{itemize}
+  \item Contre un adversaire
+  \item Contre une IA
+  \item Via le réseau
+  \item Bouger une pièce
+  \item Voir l'historique des coups
+  \item Voir les coups possibles
+ \end{itemize}
+ \item Sélectionner niveau IA
+ \item Enregistrer une partie
+ \item Reprendre une partie enregistrée
+\end{itemize}
+
 \subsection{Objectif}
 Le but du projet n'est pas forcément d'implémenter le plus de fonctionnalités possibles, ni même de proposer quelque chose d'innovant. En effet, ce type d'application étant assez difficile à réaliser, les projets existants seront forcément plus intéressants que notre réalisation finale.
 Notre objectif est donc mettre en pratique, à travers la réalisation d'une application complexe, les différents domaines abordés dans notre formation (IHM, CO, POO, Réseau) mais également de découvrir les bases de la programmation d'intelligences artificielles.
 Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont de très performantes, et la plupart proposent déjà nos fonctionnalités).
 
+<<<<<<< HEAD
 \section{Fonctionnalités principales}
 
 cf BackLog produit
 
+=======
+\newpage
+>>>>>>> 5c71965c928d086980356de07c85fb361a48d8cb
 \section{Existant}
 \subsection{Moteurs}
 
@@ -87,7 +107,6 @@ Stockfish est un programme d'échecs open source développé par Tord Romstad, Marc
 
 Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
-\newpage
 \subsubsection{GNU Chess}
 \url{https://www.gnu.org/software/chess/}
 \newline
@@ -108,6 +127,20 @@ Deep Blue est un superordinateur conçu par IBM destiné à jouer aux échecs. Il a 
 WJChess 3d est jeu d'échec pour pc fonctionnant sous windows. Il inclut de nombreuses options et fonctionnalités et à la particularité d'avoir une partie graphique assez élaborée et modifiable à volonté.
 Ce logiciel ne permet qu'un mode 2 joueur ou contre l'ordinateur, il intègre les possibilités de sauvegarder, reprendre une partie ou même créer une position grâce à l'importation / exportation des position au format FEN.
 De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux de difficulté avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
+
+\subsection{Jeux en ligne}
+Il existe de nombreux jeux d'échecs en ligne et beaucoup ne proposent que quelques fonctionnalités très simples.
+
+\paragraph{Jouer-aux-echecs.fr}
+\url{http://jouer-aux-echecs.fr/}
+\newline
+
+Ce jeu d'échec en ligne ne possède que quelques fonctionnalités parmis lesquelle nous pouvont choisir la couleur de nos pions, le niveau de jeu du logiciel Shredder mais nous avons également la possibilité d'annuler un tour. Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir a chaque tour quelles sont nos possibilités de mouvement.
+
+\paragraph{Jeu d'échecs flash}
+\url{http://www.stratozor.com/echecs/jeu-echecs-flash.php}
+
+C'est un jeu d'échec en ligne basé sur la technologie flash. Il permet entre autre d'afficher l'historique des coups et les mouvements possibles en cliquant sur une pièce. 
 
 \subsection{Lichess}
 \url{https://fr.lichess.org/}
