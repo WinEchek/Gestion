@@ -10,7 +10,6 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usetikzlibrary{arrows,automata}
 
@@ -151,15 +150,23 @@ L'IA n'a plus qu'à choisir le meilleur coups, c'est-à-dire, le coups associé au 
 \fi
 
 \subsection{Langage}
-Pour ce qui est du langage utilisé pour l'implémentation nous avons évaluer trois options, le C++, le C# et Java.
 
-Le principal atout du C++ est la performance, en effet celui ci permet de descendre plus bas niveau que le C# ou le Java. D'autre part la bibliothèque standard est moins haut niveau. Les outils fournis en comparaisant au Java/C# ne permettent pas un développement rapide ceux-ci étant plus performant mais moins simple à l'utilisation ce qui dans le cadre de notre projet est peu pertinant, nous ne cherchons pas à réaliser un programme performant. De plus il nous aurait fallut utiliser un framework comme Qt pour réaliser la graphique, et l'environnement de dévelopement associé (Qt creator) est quelque peu contraignant.
+Pour ce qui est du langage utilisé pour l'implémentation, nous avons évalué trois options, le C++, le C\# et Java.
+\newline
 
-Le Java quant à lui présente l'avantage d'être plus haut niveau que le C++, d'avoir plusieurs librairies graphique intégré. Suite à la réalisation de plusieurs projet en Java (POO, Graphe, Modélisation), nous sommes familiarisés avec sont utilisation, il nous aurait été simple de l'utiliser. L'environement de dévelopement que nous utilisons (IntellijIdea) pour le développement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java tourne sur une machine virtuelle permet une portabilité du programme sous différentes plateformes jugé inutile dans le cadre de ce projet.
+Le principal atout du C++ est la performance, en effet celui-ci permet de descendre plus bas niveau que le C\# ou le Java. D'autre part, la bibliothèque standard est moins haut niveau. Les outils fournis en comparaison au Java/C\# ne permettent pas un développement rapide ceux-ci étant plus performant, mais moins simple à l'utilisation ce qui dans le cadre de notre projet est peu pertinent, nous ne cherchons pas à réaliser un programme performant. De plus, il nous aurait fallu utiliser un framework comme Qt pour réaliser la graphique, et l'environnement de développement associé (Qt creator) est quelque peu contraignant.
+\newline
 
-Notre choix se portera donc sur le C#. Celui ci dispose d'un environement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développé en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurents, la bibliothèque graphique (WindowsPresentationFoudation) fournie avec le framework simplifie par exemple la réalisation de fenètre. Et bien que jugé peu pertinante dans le cadre de ce projet, pour ce qui est de la performance le C# se situe entre le C++ et le Java.
+Le Java quant à lui, présente l'avantage d'être plus haut niveau que le C++, d'avoir plusieurs librairies graphiques intégrées. Suite à la réalisation de plusieurs projets en Java (POO, Graphe, Modélisation), nous sommes familiarisés avec sont utilisation, il nous aurait été simple de l'utiliser. L'environnement de développement que nous utilisons (IntellijIdea) pour le développement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java tourne sur une machine virtuelle permet une portabilité du programme sous différentes plateformes jugé inutile dans le cadre de ce projet.
+\newline
 
-En conclusion le C# nous permet de simplifier un bon nombre de point qu'il est peu intéressant de développer dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus des points intéressant du projet, la qualité et la robustesse, et peu être d'arriver plus vite à la partie final du projet : la réalisation de l'intelligence artificielle.
+Notre choix se portera sur le C\#. Celui-ci dispose d'un environnement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C\# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développer en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurrents, la bibliothèque graphique (WindowsPresentationFoudation) fournie avec le framework simplifie par exemple la réalisation de fenêtre. Et bien que jugé peu pertinente dans le cadre de ce projet, pour ce qui est de la performance le C\# se situe entre le C++ et le Java.
+\newline
+
+Le choix du C\# par rapport au Java s'est donc fait sur la flexibilité du Framework graphique fourni par C\#, mais c'est également l'opportunité d'apprendre plus en détail ce langage, très utilisé dans le monde professionnel.
+\newline
+
+En conclusion, le C\# nous permet de simplifier un bon nombre de points qu'il est peu intéressant de développer dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus des points intéressants du projet, la qualité et la robustesse, et peu être d'arriver plus vite à la partie final du projet : la réalisation de l'intelligence artificielle.
 \subsection{Moteur}
  
 \subsubsection{Partie nulle}
