@@ -151,11 +151,15 @@ L'IA n'a plus qu'à choisir le meilleur coups, c'est-à-dire, le coups associé au 
 \fi
 
 \subsection{Langage}
-Nous avons choisi de développer WinEchek en C\#, avec le framework .NET. Ces solutions de développement nous permettent une grande flexibilité grâce à l'abstraction qu'elles fournissent. En effet, cette abstraction nous permettra d'aller droit au but et de ne pas s'arrêter sur des détails d'implémentation notamment pour le réseau ou l'IHM.
-Le C++ aurait permis une recherche de la performance bien plus poussée, mais peu pertinente dans le cadre de ce projet. 
-Aussi, le Java propose également une panoplie d'outils pour développer rapidement, mais la bibliothèque graphique nous parait moins flexible que celle fournie par le framework .NET (WPF)
-Ce projet sera l'occasion de nous familiariser avec le C\#, très utilisé dans le monde professionnel. Par ailleurs, ce choix nous fera gagner du temps lors de l'implémentation, ce qui nous permettra d'arriver plus vite à la réalisation de l'IA qui est intéressante pour nous.
+Pour ce qui est du langage utilisé pour l'implémentation nous avons évaluer trois options, le C++, le C# et Java.
 
+Le principal atout du C++ est la performance, en effet celui ci permet de descendre plus bas niveau que le C# ou le Java. D'autre part la bibliothèque standard est moins haut niveau. Les outils fournis en comparaisant au Java/C# ne permettent pas un développement rapide ceux-ci étant plus performant mais moins simple à l'utilisation ce qui dans le cadre de notre projet est peu pertinant, nous ne cherchons pas à réaliser un programme performant. De plus il nous aurait fallut utiliser un framework comme Qt pour réaliser la graphique, et l'environnement de dévelopement associé (Qt creator) est quelque peu contraignant.
+
+Le Java quant à lui présente l'avantage d'être plus haut niveau que le C++, d'avoir plusieurs librairies graphique intégré. Suite à la réalisation de plusieurs projet en Java (POO, Graphe, Modélisation), nous sommes familiarisés avec sont utilisation, il nous aurait été simple de l'utiliser. L'environement de dévelopement que nous utilisons (IntellijIdea) pour le développement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java tourne sur une machine virtuelle permet une portabilité du programme sous différentes plateformes jugé inutile dans le cadre de ce projet.
+
+Notre choix se portera donc sur le C#. Celui ci dispose d'un environement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développé en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurents, la bibliothèque graphique (WindowsPresentationFoudation) fournie avec le framework simplifie par exemple la réalisation de fenètre. Et bien que jugé peu pertinante dans le cadre de ce projet, pour ce qui est de la performance le C# se situe entre le C++ et le Java.
+
+En conclusion le C# nous permet de simplifier un bon nombre de point qu'il est peu intéressant de développer dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus des points intéressant du projet, la qualité et la robustesse, et peu être d'arriver plus vite à la partie final du projet : la réalisation de l'intelligence artificielle.
 \subsection{Moteur}
  
 \subsubsection{Partie nulle}
