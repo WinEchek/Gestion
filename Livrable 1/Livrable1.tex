@@ -66,20 +66,20 @@ Le but du projet n'est pas forcément d'implémenter le plus de fonctionnalités po
 Notre objectif est donc mettre en pratique, à travers la réalisation d'une application complexe, les différents domaines abordés dans notre formation (IHM, CO, POO, Réseau) mais également de découvrir les bases de la programmation d'intelligences artificielles.
 Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont de très performantes, et la plupart proposent déjà nos fonctionnalités).
 
+\section{Fonctionnalités principales}
+
+cf BackLog produit
+
 \section{Existant}
 \subsection{Moteurs}
 
 Les moteurs d'échecs sont le cœur des jeux d'échecs. Ce sont eux qui gèrent toutes les contraintes des parties d'échecs et ont un module d'intelligence artificielle intégré.
 
-
-
 \subsubsection{StockFish}
 \url{https://stockfishchess.org/}
 \newline
 
-Stockfish est un programme d'échecs open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4.
-
-Ce moteur est conçu pour la performance (il a gagné plusieurs d'IA d'échecs). C'est pourquoi il a été codé en C++, un langage orienté objet basé sur le langage C très apprécié pour sa vitesse d'exécution. Pour modélisé le plateau de jeu, StockFish utilise des bitboards. Ceux-ci permettent de représenter un plateau sous la forme d'une matrice de bits (1 si la case possède une pièce, 0 sinon). Cependant, lors de leur création dans le moteur, on va préférer stocker ces matrices sous la forme d'un entier non signé de 64 bits (puisque le plateau possède 64 cases). Ainsi, le moteur est très rapide et très peu gourmand en mémoire, mais leur implémentation est loin d'être aisée.
+Stockfish est un programme d'échecs open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
 
 \subsubsection{Komodo}
 \url{https://komodochess.com/}
@@ -92,9 +92,7 @@ Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Ma
 \url{https://www.gnu.org/software/chess/}
 \newline
 
-GNU Chess est un logiciel libre de jeu d'échecs, sous les termes de la licence publique générale GNU, maintenu par la collaboration de développeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut être considéré comme un moteur d'échecs. Il est souvent utilisé avec un environnement graphique comme XBoard ou GlChess pour la 3D. 
-
-Tout comme StockFish, GNU Chess utilise des bitboards et son intelligence artificielle est basée sur un algorithme de recherche\footnote{un algorithme de recherche est un type d'algorithme qui, pour un domaine, un problème de ce domaine et des critères donnés, retourne en résultat un ensemble de solutions répondant au problème.} appelé élagage Alpha-Bêta (cf. partie 5.1) et a subi une refonte total pour sa version 5 en 1999, car son code était mal écrit.
+GNU Chess est un logiciel libre de jeu d'échecs, sous les termes de la licence publique générale GNU, maintenu par la collaboration de développeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut être considéré comme un moteur d'échecs. Il est souvent utilisé avec un environnement graphique comme XBoard ou GlChess pour la 3D.
 
 \subsection{Deep Blue}
 \url{https://fr.wikipedia.org/wiki/Deep_Blue}
@@ -117,36 +115,13 @@ De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux d
 
 Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contre d'autres joueurs réels, une fois connecté sur le site, ou bien contre une IA avec différents niveaux de difficulté allant de 1 à 10. Le site propose aussi des tutoriels proposant une initiation aux échecs et différents entraînements en fonction de son niveau de maîtrise.
 
-\section{Fonctionnalités principales}
-\begin{itemize}
- \item Jouer une partie
- \begin{itemize}
-  \item Contre un adversaire
-  \item Contre une IA
-  \item Via le réseau
-  \item Bouger une pièce
-  \item Voir l'historique des coups
-  \item Voir les coups possibles
- \end{itemize}
- \item Sélectionner niveau IA
- \item Enregistrer une partie
- \item Reprendre une partie enregistrée
-\end{itemize}
+
 
 \newpage
 \section{Technologies}
 \subsection{Préambule}
+
 Pour le type d'application, nous avons opté pour une application de bureau. Le cycle de développement ainsi que les technologies nous correspondant plus qu'avec une application web. Pour des raisons de budget et de flexibilité, nous avons fait le choix d'utiliser une architecture client-serveur / client plutôt qu'une architecture client / serveur / client, cela nous permet de ne pas avoir à matérialisé un serveur et nous donnera l'occasion de découvrir l'utilisation de cette architecture.
-
-\iffalse
-\subsection{Intelligence Artificielle}
- \subsubsection{Algorithme MiniMax}
-
-L'algorithme minimax est un algorithme souvent utilisé pour les jeux fonctionnant sur le principe du tour par tour. Le but est de trouver le meilleur coups possible à partir d'un état donné du jeu. Pour ce faire, on construit un arbre de jeu, qui est une représentation des coups possibles à partir de la configuration actuelle du jeu. Les feuilles de cet arbre représentent la ou les prochaines fois que l'adversaire de l'IA va jouer (ainsi on peut prévoir les coups sur un à plusieurs tours en fonction d'un niveau de profondeur choisis), et on calcule pour chaque feuille un "poids" pour tout les coups possibles.
-
-Ce poids se détermine à l'aide d'une fonction d'évaluation. Celle-ci permet en fonction de paramètres choisis tel que la position d'une pièce ou son degré de liberté (possibilité de se déplacer de une ou plusieurs cases, en diagonal, horizontalement, verticalement, etc.) calculer un poids pour un certain coups.
-L'IA n'a plus qu'à choisir le meilleur coups, c'est-à-dire, le coups associé au poids le plus élevé.
-\fi
 
 \subsection{Langage}
 
@@ -159,29 +134,13 @@ Le principal atout du C++ est la performance, en effet celui-ci permet de descen
 Le Java quant à lui, présente l'avantage d'être plus haut niveau que le C++, d'avoir plusieurs librairies graphiques intégrées. Suite à la réalisation de plusieurs projets en Java (POO, Graphe, Modélisation), nous sommes familiarisés avec sont utilisation, il nous aurait été simple de l'utiliser. L'environnement de développement que nous utilisons (IntellijIdea) pour le développement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java tourne sur une machine virtuelle permet une portabilité du programme sous différentes plateformes jugé inutile dans le cadre de ce projet.
 \newline
 
-Notre choix se portera sur le C\#. Celui-ci dispose d'un environnement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C\# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développer en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurrents, la bibliothèque graphique (WindowsPresentationFoudation) fournie avec le framework simplifie par exemple la réalisation de fenêtre. Et bien que jugé peu pertinente dans le cadre de ce projet, pour ce qui est de la performance le C\# se situe entre le C++ et le Java.
+Notre choix se portera sur le C\#. Celui-ci dispose d'un environnement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C\# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développer en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurrents, la bibliothèque graphique (Windows Presentation Foundation) fournie avec le framework simplifie par exemple la réalisation de fenêtre. Et bien que jugé peu pertinente dans le cadre de ce projet, pour ce qui est de la performance le C\# se situe entre le C++ et le Java.
 \newline
 
 Le choix du C\# par rapport au Java s'est donc fait sur la flexibilité du Framework graphique fourni par C\#, mais c'est également l'opportunité d'apprendre plus en détail ce langage, très utilisé dans le monde professionnel.
 \newline
 
 En conclusion, le C\# nous permet de simplifier un bon nombre de points qu'il est peu intéressant de développer dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus des points intéressants du projet, la qualité et la robustesse, et peu être d'arriver plus vite à la partie final du projet : la réalisation de l'intelligence artificielle.
-\subsection{Moteur}
- 
-\subsubsection{Partie nulle}
-\begin{itemize}
- \item Nulle par matériel insuffisant :
- \begin{itemize}
-  \item Roi contre Roi
-  \item Roi et Fou contre Roi
-  \item Roi et Cavalier contre Roi
-  \item Roi et Fou contre Roi et Fou
- \end{itemize}
- \item Règle des 50 coups sans prise de pièces
- \item Pat
- \item Consentement mutuel
- \item Triple répétition
-\end{itemize}
 
 \newpage
 \section{Annexe}
