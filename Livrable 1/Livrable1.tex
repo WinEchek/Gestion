@@ -63,28 +63,49 @@ WinEchek est une application Windows qui permettra de jouer aux échecs sur un or
 
 \subsection{Fonctionnalités principales}
 \begin{itemize}
- \item Jouer une partie
+ \item Gestion de l'affichage et des contrôlse de l'utilisateur (IHM)
  \begin{itemize}
-  \item Contre un adversaire
-  \item Contre une IA
-  \item Via le réseau
-  \item Bouger une pièce
-  \item Voir l'historique des coups
-  \item Voir les coups possibles
+  \item L'utilisateur pourra lancer une partie contre un adversaire de type humains sur la même machine
+  \item L'utilisateur pourra lancer une partie contre un adversaire en local
+  \item L'utilisateur pourra lancer une partie contre un adversaire en réseau
+  \item L'utilisateur pourra lancer une partie contre une intelligence artificielle
+  \item Présence du plateau et des pièces lors de l'affichage d'une partie
+  \item Présence d'un timer dans l'affichage d'une partie
+  \item Présence d'un historique des coups dans l'affichage d'une partie
+  \item Présence d'un affichage des pièces prises lors d'une partie
+  \item L'utilisateur pourra contrôler le déplacement de ses pièces grâce à la souris
+  \item Afficher les coups possibles lorsque le joueur sélectionne une pièce
+  \item Afficher un menu pour modifier des options d'affichage ou sauvegarder un historique de partie
+  \item Sauvegarder une partie en cours
  \end{itemize}
- \item Sélectionner niveau IA
- \item Enregistrer une partie
- \item Reprendre une partie enregistrée
+ \item Moteur de jeu et contrôle des parties
+ \begin{itemize}
+  \item Déroulement en tour par tour
+  \item Contrôle des déplacements possibles
+  \item Contrôle des positions d'échec
+  \item Contrôle de prise des pièces
+  \item Contrôle de la promotion d'un pion en une autre pièce prise par l'adversaire
+  \item Contrôle de fin de partie (échec et pat)
+  \item Contrôle de fin de partie (échec et mat)
+ \end{itemize}
+ \item Gestion des parties en réseau
+ \begin{itemize}
+  \item Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre soit en local (sur un autre ordinateur)
+  \item Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre à travers internet
+ \end{itemize}
+ \item Mise en place d'un joueur virtuel
+ \begin{itemize}
+  \item L'utilisateur jouera contre un joueur virtuel (intelligence artificielle) qui proposera plusieurs niveaux de difficulté
+ \end{itemize}
 \end{itemize}
+
+
+
 
 \subsection{Objectif}
 Le but du projet n'est pas forcément d'implémenter le plus de fonctionnalités possibles, ni même de proposer quelque chose d'innovant. En effet, ce type d'application étant assez difficile à réaliser, les projets existants seront forcément plus intéressants que notre réalisation finale.
 Notre objectif est donc mettre en pratique, à travers la réalisation d'une application complexe, les différents domaines abordés dans notre formation (IHM, CO, POO, Réseau) mais également de découvrir les bases de la programmation d'intelligences artificielles.
-Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont de très performantes, et la plupart proposent déjà nos fonctionnalités).
-
-\section{Fonctionnalités principales}
-
-cf BackLog produit
+Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont très performantes, et la plupart proposent déjà nos fonctionnalités).
 
 \newpage
 \section{Existant}
@@ -93,58 +114,73 @@ cf BackLog produit
 Les moteurs d'échecs sont le cœur des jeux d'échecs. Ce sont eux qui gèrent toutes les contraintes des parties d'échecs et ont un module d'intelligence artificielle intégré.
 
 \subsubsection{StockFish}
-\url{https://stockfishchess.org/}
+\url{https://stockfishchess.org}
 \newline
-
-Stockfish est un programme d'échecs open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
+Stockfish est un programme d'échecs multiprocesseur open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
 
 \subsubsection{Komodo}
-\url{https://komodochess.com/}
+\url{https://komodochess.com}
 \newline
-
 Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
 \subsubsection{GNU Chess}
-\url{https://www.gnu.org/software/chess/}
+\url{https://www.gnu.org/software/chess}
 \newline
-
 GNU Chess est un logiciel libre de jeu d'échecs, sous les termes de la licence publique générale GNU, maintenu par la collaboration de développeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut être considéré comme un moteur d'échecs. Il est souvent utilisé avec un environnement graphique comme XBoard ou GlChess pour la 3D.
 
 \subsection{Deep Blue}
 \url{https://fr.wikipedia.org/wiki/Deep_Blue}
 \newline
-
 Deep Blue est un superordinateur conçu par IBM destiné à jouer aux échecs. Il a battu Garry Kasparov, un des meilleurs joueurs d'échecs au monde, en 1997. Ce fut un événement remarquable dans le monde de l'intelligence artificielle, car dès lors, aucun ordinateur n'avait réussi à battre un joueur humain aux échecs, et on pensait que ce ne serait pas possible avant un long moment.
 
+\newpage
 \section{Solutions similaires}
-\subsection{WJChess 3d}
-\url{https://fr.jeffprod.com/wjchess/}
-\newline
-
-WJChess 3d est jeu d'échec pour pc fonctionnant sous windows. Il inclut de nombreuses options et fonctionnalités et à la particularité d'avoir une partie graphique assez élaborée et modifiable à volonté.
-Ce logiciel ne permet qu'un mode 2 joueur ou contre l'ordinateur, il intègre les possibilités de sauvegarder, reprendre une partie ou même créer une position grâce à l'importation / exportation des position au format FEN.
-De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux de difficulté avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
 
 \subsection{Jeux en ligne}
 Il existe de nombreux jeux d'échecs en ligne et beaucoup ne proposent que quelques fonctionnalités très simples.
 
-\paragraph{Jouer-aux-echecs.fr}
-\url{http://jouer-aux-echecs.fr/}
+\paragraph{Lichess}
+\url{https://fr.lichess.org}
 \newline
-
-Ce jeu d'échec en ligne ne possède que quelques fonctionnalités parmis lesquelle nous pouvont choisir la couleur de nos pions, le niveau de jeu du logiciel Shredder mais nous avons également la possibilité d'annuler un tour. Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir a chaque tour quelles sont nos possibilités de mouvement.
-
-\paragraph{Jeu d'échecs flash}
-\url{http://www.stratozor.com/echecs/jeu-echecs-flash.php}
-
-C'est un jeu d'échec en ligne basé sur la technologie flash. Il permet entre autre d'afficher l'historique des coups et les mouvements possibles en cliquant sur une pièce. 
-
-\subsection{Lichess}
-\url{https://fr.lichess.org/}
-\newline
-
 Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contre d'autres joueurs réels, une fois connecté sur le site, ou bien contre une IA avec différents niveaux de difficulté allant de 1 à 10. Le site propose aussi des tutoriels proposant une initiation aux échecs et différents entraînements en fonction de son niveau de maîtrise.
 
+\paragraph{ShredderChess}
+\url{https://www.shredderchess.net}
+\newline
+Ce jeu d'échesc en ligne est très complet, nous avons la possiblité de cha
+
+\paragraph{Jouer-aux-echecs.fr}
+\url{http://jouer-aux-echecs.fr}
+\newline
+Ce jeu d'échec en ligne ne possède que quelques fonctionnalités parmis lesquelle nous pouvont choisir la couleur de nos pions, le niveau de jeu du logiciel Shredder mais nous avons également la possibilité d'annuler un tour. Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir a chaque tour quelles sont nos possibilités de mouvement.
+
+\paragraph{Flash Chess}
+\url{http://www.stratozor.com/echecs/jeu-echecs-flash.php}
+C'est un jeu d'échec en ligne basé sur la technologie flash. Développé dans les années 2000 afin de démontrer la puissance d'ActionScript, un langage de programmation utilisé pour des applications clientes. Parmis ses fonctionnalités, il ne permet uniquement d'afficher l'historique des coups et les mouvements possibles en cliquant sur une pièce. Il intègre également la possibilité de redémarrer une partie.
+
+\paragraph{Flash Chess III}
+\url{http://www.lesjeuxgratuits.fr/jouer.php?n=73}
+Ce jeu d'échec est est la version améliorée de Flash Chess. En effet, il arbore un design tout en 3D et quelques fonctionnalités supplémentaire. Il propose de recommencer, sauvegarder ou reprendre une partie, annuler un coup et est également disponible en téléchargement pour application de bureau : SparkChess.
+
+\paragraph{SparkChess en ligne}
+\url{https://www.sparkchess.com}
+\newline
+SparkChess en ligne est un jeu d'échec très complet sur navigateur. Tout d'abord il propose un choix d'Intelligence Artificielle en fonction du niveau désiré avec une idée de mode histoire (certains personnages sont à débloqués au fur et à mesure du jeu). Dans cette version en ligne, ce jeu d'échec propose un historique des coups, un compteur de temps, la possibilité d'annuler ou coup mais permet également de sauvegarder l'état d'une partie et d'en charger une.
+
+\subsection{Application de bureau}
+Dans certaines conditions, il n'est pas possible d'accéder aux jeux en lignes, ainsi certaines solutions propose une version hors ligne de jeux d'échecs.
+
+\paragraph{SparkChess hors ligne}
+\url{https://www.sparkchess.com/download.html}
+\newline
+Une version payante de SparkChess est disponible et permet de jouer hors ligne contre son ordinateur mais également en réseau avec un chat intégré à l'application. Ce jeu d'échec très complet propose notamment des fonctions d'analyse de jeu à un moment donné, éditeur de jeu avec le format FEN mais également l'affichage des coups possibles ou même exporter le plateau en image PNG.
+
+\paragraph{WJChess 3d}
+\url{https://fr.jeffprod.com/wjchess}
+\newline
+WJChess 3d est jeu d'échec pour pc fonctionnant sous windows. Il inclut de nombreuses options et fonctionnalités et à la particularité d'avoir une partie graphique assez élaborée et modifiable à volonté.
+Ce logiciel ne permet qu'un mode 2 joueur ou contre l'ordinateur, il intègre les possibilités de sauvegarder, reprendre une partie ou même créer une position grâce à l'importation / exportation des position au format FEN.
+De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux de difficulté contre l'IA avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
 
 
 \newpage
@@ -176,16 +212,16 @@ En conclusion, le C\# nous permet de simplifier un bon nombre de points qu'il es
 \section{Annexe}
 \subsection{Webographie}
 \begin{itemize}
- \item \url{http://www.ffothello.org/informatique/algorithmes/}
- \item \url{http://wannabe.guru.org/scott/hobbies/chess/}
+ \item \url{http://www.ffothello.org/informatique/algorithmes}
+ \item \url{http://wannabe.guru.org/scott/hobbies/chess}
  \item \url{http://www.chessopolis.com/computer-chess/#info}
- \item \url{http://www.tckerrigan.com/Chess/TSCP/}
- \item \url{https://chessprogramming.wikispaces.com/}
+ \item \url{http://www.tckerrigan.com/Chess/TSCP}
+ \item \url{https://chessprogramming.wikispaces.com}
  \item \url{https://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html}
  \item \url{https://github.com/Tazeg/JePyChess}
  \item \url{http://codes-sources.commentcamarche.net/source/50090-chess-game-core-librairie-jeu-d-echec-en-c}
  \item \url{http://imagecomputing.net/damien.rohmer/data/previous_website/documents/teaching/13_0fall_cpe/3eti_software_development_c/documents_generaux/02_presentation_projet.pdf}
- \item \url{http://khayyam.developpez.com/articles/algo/genetic/}
+ \item \url{http://khayyam.developpez.com/articles/algo/genetic}
 \end{itemize}
 
 \end{document}
