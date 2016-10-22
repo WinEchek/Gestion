@@ -38,7 +38,7 @@
         \centering \bfseries
 	  WinEchek
         \vskip3pt
-        \large Dossier prÃ©liminaire
+        \large Dossier préliminaire
     \end{minipage}
 }
 
@@ -48,7 +48,7 @@
 
 \begin{document}
 
-% dÃ©finition des style de puces
+% définition des style de puces
 \renewcommand{\labelitemi}{$\bullet$}
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemiii}{$-$}
@@ -59,30 +59,30 @@
 
 \section{Introduction}
 \subsection{Besoins}
-WinEchek est une application Windows qui permettra de jouer aux Ã©checs sur un ordinateur. Les parties pourront Ãªtre dispensÃ©es de diffÃ©rentes maniÃ¨res. La premiÃ¨re sera de jouer Ã  deux joueurs humains sur le mÃªme ordinateur. La seconde permettra Ã  deux joueurs humains de jouer en rÃ©seau (local) sur la mÃªme partie. Enfin, la derniÃ¨re proposera Ã  un joueur seul de dispenser une partie contre l'ordinateur qui sera dotÃ© d'une intelligence artificielle.
+WinEchek est une application Windows qui permettra de jouer aux échecs sur un ordinateur. Les parties pourront être dispensées de différentes manières. La première sera de jouer à deux joueurs humains sur le même ordinateur. La seconde permettra à deux joueurs humains de jouer en réseau (local) sur la même partie. Enfin, la dernière proposera à un joueur seul de dispenser une partie contre l'ordinateur qui sera doté d'une intelligence artificielle.
 
-\subsection{FonctionnalitÃ©s principales}
+\subsection{Fonctionnalités principales}
 \begin{itemize}
  \item Jouer une partie
  \begin{itemize}
   \item Contre un adversaire
   \item Contre une IA
-  \item Via le rÃ©seau
-  \item Bouger une piÃ¨ce
+  \item Via le réseau
+  \item Bouger une pièce
   \item Voir l'historique des coups
   \item Voir les coups possibles
  \end{itemize}
- \item SÃ©lectionner niveau IA
+ \item Sélectionner niveau IA
  \item Enregistrer une partie
- \item Reprendre une partie enregistrÃ©e
+ \item Reprendre une partie enregistrée
 \end{itemize}
 
 \subsection{Objectif}
-Le but du projet n'est pas forcÃ©ment d'implÃ©menter le plus de fonctionnalitÃ©s possibles, ni mÃªme de proposer quelque chose d'innovant. En effet, ce type d'application Ã©tant assez difficile Ã  rÃ©aliser, les projets existants seront forcÃ©ment plus intÃ©ressants que notre rÃ©alisation finale.
-Notre objectif est donc de mettre en pratique, au travers de la rÃ©alisation d'une application complexe, les diffÃ©rents domaines abordÃ©s dans notre formation (IHM, CO, POO, RÃ©seau) mais Ã©galement de dÃ©couvrir les bases de la programmation d'intelligences artificielles.
-Pour rÃ©sumer, nous rÃ©alisons cette application plus dans un but pÃ©dagogique que pour combler un besoin (les solutions existantes sont trÃ¨s performantes, et la plupart proposent dÃ©jÃ  nos fonctionnalitÃ©s).
+Le but du projet n'est pas forcément d'implémenter le plus de fonctionnalités possibles, ni même de proposer quelque chose d'innovant. En effet, ce type d'application étant assez difficile à réaliser, les projets existants seront forcément plus intéressants que notre réalisation finale.
+Notre objectif est donc mettre en pratique, à travers la réalisation d'une application complexe, les différents domaines abordés dans notre formation (IHM, CO, POO, Réseau) mais également de découvrir les bases de la programmation d'intelligences artificielles.
+Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont de très performantes, et la plupart proposent déjà nos fonctionnalités).
 
-\section{FonctionnalitÃ©s principales}
+\section{Fonctionnalités principales}
 
 cf BackLog produit
 
@@ -90,87 +90,87 @@ cf BackLog produit
 \section{Existant}
 \subsection{Moteurs}
 
-Les moteurs d'Ã©checs sont le cÅ“ur des jeux d'Ã©checs. Ce sont eux qui gÃ¨rent toutes les contraintes des parties d'Ã©checs et ont un module d'intelligence artificielle intÃ©grÃ©.
+Les moteurs d'échecs sont le cœur des jeux d'échecs. Ce sont eux qui gèrent toutes les contraintes des parties d'échecs et ont un module d'intelligence artificielle intégré.
 
 \subsubsection{StockFish}
 \url{https://stockfishchess.org/}
 \newline
 
-Stockfish est un programme d'Ã©checs open source dÃ©veloppÃ© par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'Ã©checs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considÃ©rÃ© comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
+Stockfish est un programme d'échecs open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
 
 \subsubsection{Komodo}
 \url{https://komodochess.com/}
 \newline
 
-Komodo est un programme d'Ã©checs commercial et non libre crÃ©Ã© par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a Ã©tÃ© considÃ©rÃ© comme le meilleur programme d'Ã©checs en 2016.
+Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
 \subsubsection{GNU Chess}
 \url{https://www.gnu.org/software/chess/}
 \newline
 
-GNU Chess est un logiciel libre de jeu d'Ã©checs, sous les termes de la licence publique gÃ©nÃ©rale GNU, maintenu par la collaboration de dÃ©veloppeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut Ãªtre considÃ©rÃ© comme un moteur d'Ã©checs. Il est souvent utilisÃ© avec un environnement graphique comme XBoard ou GlChess pour la 3D.
+GNU Chess est un logiciel libre de jeu d'échecs, sous les termes de la licence publique générale GNU, maintenu par la collaboration de développeurs. Ne disposant que d'une saisie des coups en ligne de commande, il peut être considéré comme un moteur d'échecs. Il est souvent utilisé avec un environnement graphique comme XBoard ou GlChess pour la 3D.
 
 \subsection{Deep Blue}
 \url{https://fr.wikipedia.org/wiki/Deep_Blue}
 \newline
 
-Deep Blue est un superordinateur conÃ§u par IBM destinÃ© Ã  jouer aux Ã©checs. Il a battu Garry Kasparov, un des meilleurs joueurs d'Ã©checs au monde, en 1997. Ce fut un Ã©vÃ©nement remarquable dans le monde de l'intelligence artificielle, car dÃ¨s lors, aucun ordinateur n'avait rÃ©ussi Ã  battre un joueur humain de si haut niveau aux Ã©checs, et on pensait que ce ne serait pas possible avant un long moment.
+Deep Blue est un superordinateur conçu par IBM destiné à jouer aux échecs. Il a battu Garry Kasparov, un des meilleurs joueurs d'échecs au monde, en 1997. Ce fut un événement remarquable dans le monde de l'intelligence artificielle, car dès lors, aucun ordinateur n'avait réussi à battre un joueur humain aux échecs, et on pensait que ce ne serait pas possible avant un long moment.
 
 \section{Solutions similaires}
 \subsection{WJChess 3d}
 \url{https://fr.jeffprod.com/wjchess/}
 \newline
 
-WJChess 3d est jeu d'Ã©checs pour PC fonctionnant sous Windows. Il inclut de nombreuses options et fonctionnalitÃ©s et possÃ¨de la particularitÃ© d'avoir une partie graphique assez Ã©laborÃ©e et modifiable Ã  volontÃ©.
-Ce logiciel ne permet qu'un mode 2 joueur ou contre l'ordinateur, il intÃ¨gre les possibilitÃ©s de sauvegarder, reprendre une partie ou mÃªme crÃ©er une position grÃ¢ce Ã  l'importation / exportation des positions au format FEN.
-De plus, il respecte toutes les rÃ¨gles des Ã©checs et propose plusieurs niveaux de difficultÃ© avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
+WJChess 3d est jeu d'échec pour pc fonctionnant sous windows. Il inclut de nombreuses options et fonctionnalités et à la particularité d'avoir une partie graphique assez élaborée et modifiable à volonté.
+Ce logiciel ne permet qu'un mode 2 joueur ou contre l'ordinateur, il intègre les possibilités de sauvegarder, reprendre une partie ou même créer une position grâce à l'importation / exportation des position au format FEN.
+De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux de difficulté avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
 
 \subsection{Jeux en ligne}
-Il existe de nombreux jeux d'Ã©checs en ligne et beaucoup ne proposent que quelques fonctionnalitÃ©s trÃ¨s simples.
+Il existe de nombreux jeux d'échecs en ligne et beaucoup ne proposent que quelques fonctionnalités très simples.
 
 \paragraph{Jouer-aux-echecs.fr}
 \url{http://jouer-aux-echecs.fr/}
 \newline
 
-Ce jeu d'Ã©chec en ligne ne possÃ¨de que quelques fonctionnalitÃ©s parmi lesquelles nous pouvons trouver le choix de la couleur de nos pions, du niveau de jeu du logiciel Shredder mais nous avons Ã©galement la possibilitÃ© d'annuler un tour. Concernant les graphismes, c'est une reprÃ©sentation trÃ¨s simpliste, en 2D avec une coloration des cases en bleu pour savoir Ã  chaque tour quelles sont nos possibilitÃ©s de mouvements.
+Ce jeu d'échec en ligne ne possède que quelques fonctionnalités parmis lesquelle nous pouvont choisir la couleur de nos pions, le niveau de jeu du logiciel Shredder mais nous avons également la possibilité d'annuler un tour. Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir a chaque tour quelles sont nos possibilités de mouvement.
 
-\paragraph{Jeu d'Ã©checs flash}
+\paragraph{Jeu d'échecs flash}
 \url{http://www.stratozor.com/echecs/jeu-echecs-flash.php}
 
-C'est un jeu d'Ã©checs en ligne basÃ© sur la technologie Flash. Il permet entre autres d'afficher l'historique des coups et les mouvements possibles en cliquant sur une piÃ¨ce. 
+C'est un jeu d'échec en ligne basé sur la technologie flash. Il permet entre autre d'afficher l'historique des coups et les mouvements possibles en cliquant sur une pièce. 
 
 \subsection{Lichess}
 \url{https://fr.lichess.org/}
 \newline
 
-Lichess est un jeu d'Ã©checs par navigateur qui permet de faire des parties contre d'autres joueurs rÃ©els, une fois connectÃ© sur le site, ou bien contre une IA avec diffÃ©rents niveaux de difficultÃ© qui vont de 1 Ã  10. Le site propose aussi des tutoriels d'initiation aux Ã©checs et diffÃ©rents entraÃ®nements en fonction de son niveau de maÃ®trise.
+Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contre d'autres joueurs réels, une fois connecté sur le site, ou bien contre une IA avec différents niveaux de difficulté allant de 1 à 10. Le site propose aussi des tutoriels proposant une initiation aux échecs et différents entraînements en fonction de son niveau de maîtrise.
 
 
 
 \newpage
 \section{Technologies}
-\subsection{PrÃ©ambule}
+\subsection{Préambule}
 
-Concernant le type d'application, nous avons optÃ© pour une application de bureau. Le cycle de dÃ©veloppement ainsi que les technologies nous correspondant plus que celles utilisÃ©es pour une application web. En ce qui concerne les parties entre deux joueurs humains en ligne, pour des raisons de budget et de flexibilitÃ©, nous avons fait le choix d'utiliser une architecture client-serveur / client plutÃ´t qu'une architecture client / serveur / client, c'est-Ã -dire que ce ne sera pas un serveur distinct qui hÃ©bergera la partie, mais un des deux clients, cela nous permet de ne pas avoir Ã  matÃ©rialiser un serveur et nous donnera l'occasion de dÃ©couvrir l'utilisation de cette architecture.
+Pour le type d'application, nous avons opté pour une application de bureau. Le cycle de développement ainsi que les technologies nous correspondant plus qu'avec une application web. Pour des raisons de budget et de flexibilité, nous avons fait le choix d'utiliser une architecture client-serveur / client plutôt qu'une architecture client / serveur / client, cela nous permet de ne pas avoir à matérialisé un serveur et nous donnera l'occasion de découvrir l'utilisation de cette architecture.
 
 \subsection{Langage}
 
-Pour ce qui est du langage utilisÃ© pour l'implÃ©mentation, nous avons Ã©valuÃ© trois options, le C++, le C\# et Java.
+Pour ce qui est du langage utilisé pour l'implémentation, nous avons évalué trois options, le C++, le C\# et Java.
 \newline
 
-Le principal atout du C++ est la performance, en effet celui-ci permet de descendre plus bas niveau que le C\# ou le Java. D'autre part, la bibliothÃ¨que standard est moins haut niveau. Les outils fournis en comparaison au Java/C\# ne permettent pas un dÃ©veloppement rapide ceux-ci Ã©tant plus performants mais moins simple d'utilisation, ce qui, dans le cadre de notre projet, est peu pertinent puisque nous ne cherchons pas Ã  rÃ©aliser un programme performant. De plus, il nous aurait fallu utiliser un framework comme Qt pour rÃ©aliser la partie graphique, et l'environnement de dÃ©veloppement associÃ© (Qt creator) est quelque peu contraignant.
+Le principal atout du C++ est la performance, en effet celui-ci permet de descendre plus bas niveau que le C\# ou le Java. D'autre part, la bibliothèque standard est moins haut niveau. Les outils fournis en comparaison au Java/C\# ne permettent pas un développement rapide ceux-ci étant plus performant, mais moins simple à l'utilisation ce qui dans le cadre de notre projet est peu pertinent, nous ne cherchons pas à réaliser un programme performant. De plus, il nous aurait fallu utiliser un framework comme Qt pour réaliser la graphique, et l'environnement de développement associé (Qt creator) est quelque peu contraignant.
 \newline
 
-Le Java quant Ã  lui, prÃ©sente les avantages d'Ãªtre plus haut niveau que le C++  et d'avoir plusieurs librairies graphiques intÃ©grÃ©es. Suite Ã  la rÃ©alisation de plusieurs projets en Java (POO, Graphes, ModÃ©lisation), nous nous sommes familiarisÃ© avec son utilisation, donc il nous aurait Ã©tÃ© plus simple de l'utiliser. L'environnement de dÃ©veloppement que nous utilisons (IntellijIdea) pour le dÃ©veloppement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java fonctionne sur une machine virtuelle permet une portabilitÃ© du programme sur diffÃ©rentes plateformes jugÃ© inutile dans le cadre de ce projet.
+Le Java quant à lui, présente l'avantage d'être plus haut niveau que le C++, d'avoir plusieurs librairies graphiques intégrées. Suite à la réalisation de plusieurs projets en Java (POO, Graphe, Modélisation), nous sommes familiarisés avec sont utilisation, il nous aurait été simple de l'utiliser. L'environnement de développement que nous utilisons (IntellijIdea) pour le développement Java est complet et moderne et moins contraignant que QtCreator. Par ailleurs, le fait que Java tourne sur une machine virtuelle permet une portabilité du programme sous différentes plateformes jugé inutile dans le cadre de ce projet.
 \newline
 
-Notre choix se portera sur le C\#. Celui-ci dispose d'un environnement de dÃ©veloppement puissant et complet (Visual Studio). Le framework utilisÃ© avec le C\# (.NET) est complet et haut niveau. Il permet, par exemple, une abstraction sur des points qui auraient Ã©tÃ© plus longs Ã  dÃ©velopper en C++, comme par exemple la mise en rÃ©seau du programme. La crÃ©ation de l'interface graphique est aussi plus simple qu'avec ses deux concurrents, en effet la bibliothÃ¨que graphique (Windows Presentation Foundation) fournie avec le framework simplifie notamment la rÃ©alisation de fenÃªtres. Et bien que jugÃ© peu pertinent dans le cadre de ce projet, il est toutefois intÃ©ressant de noter qu'en terme de performance le C\# se situe entre le C++ et le Java.
+Notre choix se portera sur le C\#. Celui-ci dispose d'un environnement de développement puissant et complet (Visual Studio). Le framework utilisé avec le C\# (.NET) est un framework complet et haut niveau. Il permet par exemple une abstraction sur des points qu'il aurait été plus long de développer en C++ comme par exemple la mise en réseau du programme. La création de l'interface graphique est aussi plus simple qu'avec ses deux concurrents, la bibliothèque graphique (Windows Presentation Foundation) fournie avec le framework simplifie par exemple la réalisation de fenêtre. Et bien que jugé peu pertinente dans le cadre de ce projet, pour ce qui est de la performance le C\# se situe entre le C++ et le Java.
 \newline
 
-Le choix du C\# par rapport au Java s'est donc fait sur la flexibilitÃ© du Framework graphique fourni par C\#, mais c'est Ã©galement l'opportunitÃ© d'apprendre plus en dÃ©tail ce langage, trÃ¨s utilisÃ© dans le monde professionnel.
+Le choix du C\# par rapport au Java s'est donc fait sur la flexibilité du Framework graphique fourni par C\#, mais c'est également l'opportunité d'apprendre plus en détail ce langage, très utilisé dans le monde professionnel.
 \newline
 
-En conclusion, le C\# nous permet de simplifier un bon nombre de points qu'il est peu intÃ©ressant de dÃ©velopper dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus en profondeur les points intÃ©ressants , la qualitÃ©, la robustesse, et peut-Ãªtre d'arriver plus vite Ã  la partie finale du projet : la rÃ©alisation de l'intelligence artificielle.
+En conclusion, le C\# nous permet de simplifier un bon nombre de points qu'il est peu intéressant de développer dans le cadre de ce projet. Ce gain de temps nous permettra donc de travailler plus des points intéressants du projet, la qualité et la robustesse, et peu être d'arriver plus vite à la partie final du projet : la réalisation de l'intelligence artificielle.
 
 \newpage
 \section{Annexe}
