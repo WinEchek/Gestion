@@ -58,31 +58,71 @@
 \maketitle
 
 \section{Diagramme des cas d'utilisation}
+\includegraphics[width=18cm]{../CO/images/MainUseCase.jpg}
+\newline
+
+\section{Diagramme de classes}
+\includegraphics[width=18cm]{../CO/images/MainClassDiagram.jpg}
+\newline
 
 \section{Diagrammes de séquence}
 
-\subsection{Créer une nouvelle partie}
-
-L'utilisateur demande au programme de créer une nouvelle partie via l'interface graphique. L'utilisateur sélectionne ensuite un mode de jeu (jouer contre une IA ou bien contre un adversaire réel), puis en fonction du mode sélectionner, l'interface graphique initialise une nouvelle partie.
+\subsection{Annuler / Refaire un mouvement}
+\includegraphics[width=18cm]{../CO/images/Annuler_Refaireunmouvement.jpg}
+\newline
 
 \subsection{Cliquer sur une pièce}
-
+\includegraphics[width=18cm]{../CO/images/CliquerSurUnePiece.jpg}
+\newline
 Le joueur clique sur une pièce à l'aide de l'interface graphique. L'interface informe ensuite le jeu de l'on a cliqué sur une pièce. Le jeu demande alors au moteur les mouvements possible pour cette pièce. Le moteur demande un état du plateau au modèle, puis il regarde tous les mouvements pouvant être effectués.
 Le moteur renvoie au jeu les cases qui peuvent accueillir la pièce, puis le jeu demande à l'interface de les afficher sur la vue du plateau.
 
-\subsection{Déplacer une pièce}
+\subsection{Créer une nouvelle partie}
+\includegraphics[width=18cm]{../CO/images/CrerUneNouvellePartie.jpg}
+\newline
+L'utilisateur demande au programme de créer une nouvelle partie via l'interface graphique. L'utilisateur sélectionne ensuite un mode de jeu (jouer contre une IA ou bien contre un adversaire réel), puis en fonction du mode sélectionner, l'interface graphique initialise une nouvelle partie.
 
+\subsection{Déplacer Une pièce}
+\includegraphics[width=18cm]{../CO/images/DeplacerUnePiece.jpg}
+\newline
 Une fois que l'utilisateur a cliqué sur une pièce et que l'interface graphique a affiché les mouvements possibles, il peut choisir de déplacer ladite pièce. Il va donc soit glisser-déposer la pièce, soit cliquer sur une case de son choix. Puis l'interface va demander au jeu de déplacer la pièce qui à son tour transmet l'information au moteur qui change la position de la pièce dans le plateau (présent dans le modèle). Le modèle dit ensuite au moteur si la pièce a bien été déplacer et, si c'est le cas, le jeu et l'interface graphique se mettent à jour.
 
-\subsection{Jouer un tour (humain)}
+\subsection{Héberger une partie}
+\includegraphics[width=18cm]{../CO/images/HebergerUnePartie.jpg}
+\newline
+
+\subsection{Jouer un tour (Humain)}
+\includegraphics[width=18cm]{../CO/images/JouerUnTour(humain).jpg}
+\newline
 
 \subsection{Jouer une partie}
-
+\includegraphics[width=18cm]{../CO/images/JouerUnePartie.jpg}
+\newline
 Au début, le jeu demande au joueur possédant les blancs de jouer un tour. Celui-ci va donc devoir déplacer une pièce et le tour ne se terminera que lorsque le joueur aura effectuer un déplacement possible. Une fois le tour terminer, le jeu demande au joueur possédant les noirs de jouer un tour comme pour les blancs. Ce processus continue tant qu'il n'y a pas échec et pat ou échec et mat ou que plus de 50 coups aient été effectué.
 
+\subsection{Mater}
+\includegraphics[width=18cm]{../CO/images/Mater.jpg}
+\newline
+
+\subsection{Promouvoir un pion}
+\includegraphics[width=18cm]{../CO/images/PromouvoirUnPion.jpg}
+\newline
+
+\subsection{Rejoindre une partie}
+\includegraphics[width=18cm]{../CO/images/RejoindreUnePartie.jpg}
+\newline
+
 \subsection{Reprendre une partie}
+\includegraphics[width=18cm]{../CO/images/ReprendreUnePartie.jpg}
+\newline
+
+\subsection{Roquer}
+\includegraphics[width=18cm]{../CO/images/Roquer.jpg}
+\newline
 
 \subsection{Sauvegarder une partie}
+\includegraphics[width=18cm]{../CO/images/SauvegarderUnePartie.jpg}
+\newline
 
 
 \end{document}
