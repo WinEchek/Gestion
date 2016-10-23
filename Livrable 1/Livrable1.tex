@@ -14,9 +14,9 @@
 \usepackage{graphicx}
 \usetikzlibrary{arrows,automata}
 
-\definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{1,0,0}
+\definecolor{green}{rgb}{0,0.6,0}
 
 
 \lstset{ %
@@ -67,42 +67,45 @@ Notre objectif est donc mettre en pratique, à travers la réalisation d'une appli
 Pour résumer, nous réalisons cette application plus dans un but pédagogique que pour combler un besoin (les solutions existantes sont très performantes, et la plupart proposent déjà nos fonctionnalités).
 
 \subsection{Fonctionnalités principales}
-\begin{itemize}
- \item Gestion de l'affichage et des contrôlse de l'utilisateur (IHM)
+Jouer une partie
  \begin{itemize}
-  \item L'utilisateur pourra lancer une partie contre un adversaire de type humains sur la même machine
-  \item L'utilisateur pourra lancer une partie contre un adversaire en local
-  \item L'utilisateur pourra lancer une partie contre un adversaire en réseau
-  \item L'utilisateur pourra lancer une partie contre une intelligence artificielle
-  \item Présence du plateau et des pièces lors de l'affichage d'une partie
-  \item Présence d'un timer dans l'affichage d'une partie
-  \item Présence d'un historique des coups dans l'affichage d'une partie
-  \item Présence d'un affichage des pièces prises lors d'une partie
-  \item L'utilisateur pourra contrôler le déplacement de ses pièces grâce à la souris
-  \item Afficher les coups possibles lorsque le joueur sélectionne une pièce
-  \item Afficher un menu pour modifier des options d'affichage ou sauvegarder un historique de partie
-  \item Sauvegarder une partie en cours
+  \item {\textcolor{orange}{Moyenne}} Jouer en réseau
+  \begin{itemize}
+   \item {\textcolor{orange}{Moyenne}} Rejoindre une partie
+   \begin{itemize}
+    \item {\textcolor{orange}{Moyenne}} Rechercher une partie
+   \end{itemize}
+   \item {\textcolor{orange}{Moyenne}} Héberger une partie
+  \end{itemize}
+  \item {\textcolor{green}{Basse}} Jouer contre une IA
+  \begin{itemize}
+   \item {\textcolor{green}{Basse}} Sélectionner le niveau de difficulté
+  \end{itemize}
+  \item {\textcolor{red}{Haute}} Jouer sur la même machine
+  \begin{itemize}
+   \item {\textcolor{red}{Haute}} Afficher quel joueur doit jouer
+  \end{itemize}
+  \item {\textcolor{orange}{Moyenne}} Gérer la partie
+  \begin{itemize}
+   \item {\textcolor{orange}{Moyenne}} Annuler un coup
+   \item {\textcolor{orange}{Moyenne}} Afficher l'historique
+   \item {\textcolor{orange}{Moyenne}} Afficher les pièces prises
+   \item {\textcolor{orange}{Moyenne}} Afficher le nombre de tous
+   \item {\textcolor{green}{Basse}} Afficher le timer
+   \item {\textcolor{green}{Basse}} Sauvegarder une partie
+   \item {\textcolor{green}{Basse}} Charger une partie
+   \item {\textcolor{orange}{Moyenne}} Rejouer un coup
+  \end{itemize}
+  \item {\textcolor{red}{Haute}} Jouer un tour
+  \begin{itemize}
+    \item {\textcolor{red}{Haute}} Déplacer une pièce
+    \item {\textcolor{orange}{Moyenne}} Afficher les déplacements possibles
+    \item {\textcolor{red}{Haute}} Promouvoir une pièce
+    \item {\textcolor{red}{Haute}} Prendre une pièce
+    \item {\textcolor{red}{Haute}} Roquer
+  \end{itemize}
  \end{itemize}
- \item Moteur de jeu et contrôle des parties
- \begin{itemize}
-  \item Déroulement en tour par tour
-  \item Contrôle des déplacements possibles
-  \item Contrôle des positions d'échec
-  \item Contrôle de prise des pièces
-  \item Contrôle de la promotion d'un pion en une autre pièce prise par l'adversaire
-  \item Contrôle de fin de partie (échec et pat)
-  \item Contrôle de fin de partie (échec et mat)
- \end{itemize}
- \item Gestion des parties en réseau
- \begin{itemize}
-  \item Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre soit en local (sur un autre ordinateur)
-  \item Permettre à l'utilisateur de jouer en réseau avec quelqu'un d'autre à travers internet
- \end{itemize}
- \item Mise en place d'un joueur virtuel
- \begin{itemize}
-  \item L'utilisateur jouera contre un joueur virtuel (intelligence artificielle) qui proposera plusieurs niveaux de difficulté
- \end{itemize}
-\end{itemize}
+
 
 \newpage
 \section{Existant}
@@ -112,12 +115,12 @@ Les moteurs d’échecs sont le cœur des jeux d’échecs. Ce sont eux qui gèrent tout
 \subsubsection{StockFish}
 \url{https://stockfishchess.org}
 \newline
-Stockfish est un programme d'échecs multiprocesseur open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
+Stockfish est un programme d'échecs multiprocesseur open source développé par Tord Romstad, Marco Costalba, Joona Kiiski et Gary Linscott. Ce programme est libre et gratuit et est le meilleur logiciel d'échecs non-commercial au monde depuis mai 2014. Sur l'ensemble des logiciels, il est considéré comme un des meilleurs avec Komodo 9.3 et Houdini 4. 
 
 \subsubsection{Komodo}
 \url{https://komodochess.com}
 \newline
-Komodo est un programme d'échecs commercial et non libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
+Komodo est un programme d'échecs commercial et non-libre créé par Don Dailey, Mark Lefler et Larry Kaufman en 2007. Il a été considéré comme le meilleur programme d'échecs en 2016.
 
 \subsubsection{GNU Chess}
 \url{https://www.gnu.org/software/chess}
@@ -143,12 +146,9 @@ L'appellation ``Hydra'' représente la partie matérielle mais aussi logicielle.
 Belle est un programme d'échec ainsi que l'ordinateur sur lequel il tournait. Conçu dans les années 1970 et 1980, il avait pour seul but de jouer aux échecs. Belle est ainsi le programme le plus fort de son époque (aux échecs) avec un score ELO de 2250 et atteint le niveau de maître international en 1983.
 Belle pouvait grâce à son matériel dédié calculer environ 160 000 positions par seconde.
 
-\section{Solutions similaires}
-
-\subsection{Jeux en ligne}
-Il existe de nombreux jeux d'échecs en ligne et beaucoup ne proposent que quelques fonctionnalités très simples.
-
 \newpage
+\section{Solutions similaires}
+\subsection{Jeux en ligne}
 \subsubsection{Lichess}
 \url{https://fr.lichess.org}
 \newline
@@ -157,12 +157,7 @@ Lichess est un jeu d'échecs par navigateur qui permet de faire des parties contr
 \subsubsection{ShredderChess}
 \url{https://www.shredderchess.net}
 \newline
-Ce jeu d'échesc en ligne est très complet, nous avons la possiblité de cha
-
-\subsubsection{Jouer-aux-echecs.fr}
-\url{http://jouer-aux-echecs.fr}
-\newline
-Ce jeu d'échec en ligne ne possède que quelques fonctionnalités parmi lesquelles nous pouvons choisir la couleur de nos pions, le niveau de jeu du logiciel Shredder, mais nous avons également la possibilité d'annuler un tour. Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir à chaque tour quelles sont nos possibilités de mouvement.
+Ce jeu d'échec en ligne ne propose que quelques fonctionnalités. Parmi celles-ci, nous avons la possibilité de démarrer une nouvelle partie avec les pions blancs ou avec les pions noirs, annuler un coup et pour finir choisir le niveau de l'ordinateur qui va jouer contre nous (Easy, Medium, Hard). Par rapport à la graphique, c'est une représentation très simpliste, en 2D avec une coloration des cases en bleu pour savoir à chaque tour quelles sont nos possibilités de mouvement.
 
 \subsubsection{Flash Chess}
 \url{http://www.stratozor.com/echecs/jeu-echecs-flash.php}
@@ -177,9 +172,7 @@ Ce jeu d'échec est est la version améliorée de Flash Chess. En effet, il arbore 
 \newline
 SparkChess en ligne est un jeu d'échec très complet sur navigateur. Tout d'abord, il propose un choix d'Intelligence Artificielle en fonction du niveau désiré avec une idée de mode histoire (certains personnages sont à débloqués au fur et à mesure du jeu). Dans cette version en ligne, ce jeu d'échec propose un historique des coups, un compteur de temps, la possibilité d'annuler ou coup, mais permet également de sauvegarder l'état d'une partie et d'en charger une.
 
-\subsubsection{Application de bureau}
-Dans certaines conditions, il n'est pas possible d'accéder aux jeux en lignes, ainsi certaines solutions proposent une version hors ligne de jeux d'échecs.
-
+\subsection{Application de bureau}
 \subsubsection{SparkChess hors ligne}
 \url{https://www.sparkchess.com/download.html}
 \newline
@@ -192,8 +185,6 @@ WJChess 3d est jeu d'échec pour pc fonctionnant sous Windows. Il inclut de nombr
 Ce logiciel ne permet qu'un mode 2 joueurs ou contre l'ordinateur, il intègre les possibilités de sauvegarder, reprendre une partie ou même créer une position grâce à l'importation / exportation des positions au format FEN.
 De plus, il respecte toutes les règles des échecs et propose plusieurs niveaux de difficulté contre l'IA avec un temps de recherche ou une profondeur fixe pour l'intelligence artificielle.
 
-
-\newpage
 \section{Technologies}
 \subsection{Préambule}
 
