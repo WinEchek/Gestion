@@ -64,16 +64,19 @@ Un joueur (en ligne ou non étant donné qu'il n'y a aucune différence entre les d
 
 \section{Diagramme de classes}
 \includegraphics[trim = 1cm 12cm 1cm 0cm]{../CO/images/MainClassDiagram.pdf}
-Le modèle est une représentation d'un plateau de jeu d'échecs, c'est-à-dire qu'un plateau est composé de 64 cases chacune de celles-ci pouvant contenir une pièce ou non. (les autres types de pièces sont aussi un héritage de la classe abstraite pièce, par souci de lisibilité, nous n'en avons représenté que deux). 
-L'interface graphique implémentera des vues correspondant à chaque objet du modèle. Mais les vues utiliseront des objets décorés qui contiendront les informations relatives à l'affichage. 
+Le modèle est une représentation d'un plateau de jeu d'échecs, c'est-à-dire qu'un plateau est composé de 64 cases chacune de celles-ci pouvant contenir une pièce ou non. (les autres types de pièces sont aussi un héritage de la classe abstraite pièce, par souci de lisibilité, nous n'en avons représenté que deux.
+ 
+L'interface graphique implémentera des vues correspondant à chaque objet du modèle. Mais les vues utiliseront des objets décorés qui contiendront les informations relatives à l'affichage.
+
 La partie centralise la logique concernant le jeu d'échec. Elle contient deux joueurs pouvant être de différentes natures. Le joueur en réseaux disposera des fonctionnalités nécessaires au déroulement d'une partie en ligne. l'IA fournit une interface qui en fonction d'un état du plateau renvoie un mouvement à effectuer.
+
 Le moteur est la classe permettant de vérifier l'intégrité et l'état du plateau. Il sert aussi à effectuer les modifications(mouvements) sur celui-ci.
 Le package de persistance fournit les fonctionnalités nécessaires à la sauvegarde et reprise d'une partie.
 
 \section{Diagrammes de séquence}
 \subsection{Annuler / Refaire un mouvement}
 \includegraphics[trim = 1cm 18.5cm 1cm 0cm]{../CO/images/Annuler_Refaireunmouvement.pdf}
-L'utilisateur demande à annulé le dernier coup effectué, l'annulation est transmise au moteur via la partie. Celui-ci annulera le coup dans le modèle et en informe la partie.
+L'utilisateur demande à annuler le dernier coup effectué, l'annulation est transmise au moteur via la partie. Celui-ci annulera le coup dans le modèle et en informe la partie.
 
 \subsection{Cliquer sur une pièce}
 
