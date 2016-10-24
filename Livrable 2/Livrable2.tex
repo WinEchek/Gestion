@@ -60,65 +60,68 @@
 
 \section{Diagramme des cas d'utilisation}
 \includegraphics[trim = 1cm 17cm 1cm 0cm]{../CO/images/MainUseCase.pdf}
+Un joueur (en ligne ou non étant donné qu'il n'y a aucune différence entre les deux, le jeu en ligne étant simplement un mode de jeu particulier) peut jouer différemment mode de jeu, pour cela, il doit au préalable créer une partie ou en reprendre une. Pour jouer l'utilisateur doit effectuer des déplacements au tour par tour, ces déplacements peuvent donner lieu à des actions différentes et modifiées l'état de la partie.
 
 \section{Diagramme de classes}
-\includegraphics[trim = 1cm 10.5cm 1cm 0cm]{../CO/images/MainClassDiagram.pdf}
+\includegraphics[trim = 1cm 12cm 1cm 0cm]{../CO/images/MainClassDiagram.pdf}
+Le modèle est une représentation d'un plateau de jeu d'échecs, c'est-à-dire qu'un plateau est composé de 64 cases chacune de celles-ci pouvant contenir une pièce ou non. (les autres types de pièces sont aussi un héritage de la classe abstraite pièce, par souci de lisibilité, nous n'en avons représenté que deux). 
+L'interface graphique implémentera des vues correspondant à chaque objet du modèle. Mais les vues utiliseront des objets décorés qui contiendront les informations relatives à l'affichage. 
+La partie centralise la logique concernant le jeu d'échec. Elle contient deux joueurs pouvant être de différentes natures. Le joueur en réseaux disposera des fonctionnalités nécessaires au déroulement d'une partie en ligne. l'IA fournit une interface qui en fonction d'un état du plateau renvoie un mouvement à effectuer.
+Le moteur est la classe permettant de vérifier l'intégrité et l'état du plateau. Il sert aussi à effectuer les modifications(mouvements) sur celui-ci.
+Le package de persistance fournit les fonctionnalités nécessaires à la sauvegarde et reprise d'une partie.
 
 \section{Diagrammes de séquence}
 \subsection{Annuler / Refaire un mouvement}
-\includegraphics[trim = 1cm 19cm 1cm 0cm]{../CO/images/Annuler_Refaireunmouvement.pdf}
+\includegraphics[trim = 1cm 18.5cm 1cm 0cm]{../CO/images/Annuler_Refaireunmouvement.pdf}
+L'utilisateur demande à annulé le dernier coup effectué, l'annulation est transmise au moteur via la partie. Celui-ci annulera le coup dans le modèle et en informe la partie.
 
 \subsection{Cliquer sur une pièce}
 
 \includegraphics[trim = 1cm 20.5cm 1cm 0cm]{../CO/images/CliquerSurUnePiece.pdf}
-Le joueur clique sur une pièce à l'aide de l'interface graphique. L'interface informe ensuite le jeu de l'on a cliqué sur une pièce. Le jeu demande alors au moteur les mouvements possible pour cette pièce. Le moteur demande un état du plateau au modèle, puis il regarde tous les mouvements pouvant être effectués.
-Le moteur renvoie au jeu les cases qui peuvent accueillir la pièce, puis le jeu demande à l'interface de les afficher sur la vue du plateau.
+L'utilisateur clique sur une pièce, la partie demande au moteur les déplacements possibles pour la pièce sélectionnée. Ensuite, la partie demande à l'interface de les afficher.
 
 \subsection{Créer une nouvelle partie}
 \includegraphics[trim = 1cm 21cm 1cm 0cm]{../CO/images/CreerUneNouvellePartie.pdf}
-\newline
-L'utilisateur demande au programme de créer une nouvelle partie via l'interface graphique. L'utilisateur sélectionne ensuite un mode de jeu (jouer contre une IA ou bien contre un adversaire réel), puis en fonction du mode sélectionner, l'interface graphique initialise une nouvelle partie.
+L'utilisateur demande à créer une nouvelle partie via l'interface graphique, celle-ci lui demande de choisir un mode de jeu. Une fois le mode choisis, une partie est créée en fonction du mode.
 
 \subsection{Déplacer Une pièce}
 \includegraphics[trim = 1cm 22cm 1cm 0cm]{../CO/images/DeplacerUnePiece.pdf}
-\newline
-Une fois que l'utilisateur a cliqué sur une pièce et que l'interface graphique a affiché les mouvements possibles, il peut choisir de déplacer ladite pièce. Il va donc soit glisser-déposer la pièce, soit cliquer sur une case de son choix. Puis l'interface va demander au jeu de déplacer la pièce qui à son tour transmet l'information au moteur qui change la position de la pièce dans le plateau (présent dans le modèle). Le modèle dit ensuite au moteur si la pièce a bien été déplacer et, si c'est le cas, le jeu et l'interface graphique se mettent à jour.
+L'utilisateur déplace une pièce sur l'interface graphique, ce déplacement est transmis à la partie qui le fait vérifier par le moteur qui met à jour le modèle et informe la partie de la réussite du déplacement.
 
 \subsection{Héberger une partie}
 \includegraphics[trim = 1cm 20cm 1cm 0cm]{../CO/images/HebergerUnePartie.pdf}
-\newline
+L'utilisateur demande à héberger une partie, une partie est donc créée puis ajoutée à la liste des parties disponibles en ligne.
 
 \subsection{Jouer un tour (Humain)}
 \includegraphics[trim = 1cm 20cm 1cm 0cm]{../CO/images/JouerUnTour(humain).pdf}
-\newline
+La partie demande au joueur d'effectuer un déplacement via l'interface graphique. Une fois le mouvement effectué, le déplacement est transmis à la partie qui le fait vérifier par le moteur qui va ensuite effectuer le déplacement sur le modèle en le mettant à jour et confirmer le déplacement à la partie.
+
 
 \subsection{Jouer une partie}
 \includegraphics[trim = 1cm 14cm 1cm 0cm]{../CO/images/JouerUnePartie.pdf}
-\newline
-Au début, le jeu demande au joueur possédant les blancs de jouer un tour. Celui-ci va donc devoir déplacer une pièce et le tour ne se terminera que lorsque le joueur aura effectuer un déplacement possible. Une fois le tour terminer, le jeu demande au joueur possédant les noirs de jouer un tour comme pour les blancs. Ce processus continue tant qu'il n'y a pas échec et pat ou échec et mat ou que plus de 50 coups aient été effectué.
+La partie demande successivement aux deux joueurs d'effectuer un coup. Chaque coup est vérifié par le moteur tant que le coup n'est pas valide, le joueur est invité à réeffectuer un autre déplacement. Ce mécanisme s'interrompt quand la partie est finie.
 
 \subsection{Mater}
 \includegraphics[trim = 1cm 12cm 1cm 0cm]{../CO/images/Mater.pdf}
-\newline
+Une pièce a été préalablement déplacée, l'engine détecte que l'adversaire est en fait échec et mat. Il en informe la partie qu'il y a échec et mat. La graphique se met à jour et la partie se termine.
 
 \subsection{Promouvoir un pion}
 \includegraphics[trim = 1cm 21cm 1cm 0cm]{../CO/images/PromouvoirUnPion.pdf}
-\newline
+Une pièce à été préalablement déplacé, l'engine détecte que celui-ci était un pion et que celui-ci doit être promu. Il le fait donc savoir à la partie, celle-ci demande à l'interface d'afficher à l'utilisateur de choisir la pièce de remplacement. L'information est ensuite renvoyée à la partie qui demande au moteur d'effectuer la promotion sur le modèle.
 
 \subsection{Rejoindre une partie}
 \includegraphics[trim = 1cm 14cm 1cm 0cm]{../CO/images/RejoindreUnePartie.pdf}
-\newline
+L'utilisateur décide de rejoindre une partie en ligne. Une requête est effectuée sur le réseau pour trouver les parties disponibles, on les affiche ensuite à l'utilisateur afin qu'il en sélectionne une. Une fois la partie sélectionnée, le joueur se connecte et construit ensuite la partie en fonction des informations fournies. 
 
 \subsection{Reprendre une partie}
 \includegraphics[trim = 1cm 19cm 1cm 0cm]{../CO/images/ReprendreUnePartie.pdf}
-\newline
+L'utilisateur décide de charger une partie précédemment sauvegardée. On lui propose de sélectionner un fichier de sauvegarde. Le GameLoader implémente un système de chaîne de responsabilité pour pouvoir charger un fichier, au cas où il existe plusieurs types de sauvegardes différentes. La classe concrète construit ensuite la partie le moteur et le modèle.
 
 \subsection{Roquer}
 \includegraphics[trim = 1cm 20cm 1cm 0cm]{../CO/images/Roquer.pdf}
-\newline
+L'utilisateur déplace son roi sur une de ses deux tours. La graphique transmet l'information au Game à travers un RealPlayer. L'engine détermine ensuite que ce mouvement est un Roque et l'effectue.
 
 \subsection{Sauvegarder une partie}
 \includegraphics[trim = 1cm 22cm 1cm 0cm]{../CO/images/SauvegarderUnePartie.pdf}
-\newline
-
+L'utilisateur demande à l'interface de sauvegarder la partie, qui transmet le message à la partie. Celle-ci utilise un GameSaver qui sauvegardera la partie en cours grâce à une implémentation du GameSaver.
 \end{document}
